@@ -5,6 +5,12 @@ import Bienvenida from './Components/Pages/Bienvenida/Bienvenida';
 import Portada from './Components/Pages/Portada/Portada';
 import Registro from './Components/Pages/Registro/Registro';
 
+import RegistroSos from './Components/Pages/RegistroSos/RegistroSos';
+
+
+import Home from './Components/Pages/Home/Home';
+
+
 function App() {
   return (
     <Router>
@@ -12,6 +18,11 @@ function App() {
           <Route path="/" element={<Bienvenida></Bienvenida>} />
           <Route path="/Portada" element={<Portada></Portada>} />
           <Route path="/Registro" element={<Registro></Registro>} />
+
+          <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
+
+          <Route path="/Home" element={<Home></Home>} />
+
         </Routes>
     </Router>
    
