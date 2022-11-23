@@ -13,8 +13,8 @@
     min-height: 70vh;
         input{
             background-color: transparent !important;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            // margin-top: 20px;
+            // margin-bottom: 20px;
             border: none;
             border-bottom: 2px solid rgb(216, 213, 213);
             width: 75%;
@@ -55,4 +55,13 @@
         width: 50px;
         height:18px
     }
+}
+
+.qq{
+    color:  rgb(0, 213, 255);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
