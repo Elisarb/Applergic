@@ -16,7 +16,7 @@ function App() {
           rel="noopener noreferrer"
         >
           <p> HOLA juaaan</p>
-          <p> VIVA EL ALCOHOL</p>
+          <p> VIVA EL ALCOHOlllllL</p>
           Learn React
         </a>
       </header>
