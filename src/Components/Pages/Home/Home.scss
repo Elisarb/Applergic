@@ -1,0 +1,61 @@
+.Home-total{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+//HEADER
+.Home-Header{
+    display: flex;
+    justify-content: space-between;
+}
+.Home-Header-Header{
+ display: flex;
+ justify-content: space-between;
+ width: 71%;
+}
+.Home-Header-Caja{
+    width: 24px;
+    height: 24px;
+}
+.Home-Header-img{
+    width: 100%;
+    height: 100%;
+}
+//MAIN
+.Home-Main{
+    justify-content: center;
+    display: flex;
+}
+
+.Home-Main-Caja-Arriba{
+    width: 172px;
+    height: 188px;
+}
+.Home-Main-img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.Home-Main-Caja-Abajo-btn1{
+    background-color: rgb(38 199 220);
+    color: white;
+    border-color: rgba(13, 51, 32, 0.1);
+    width: 50%;
+    height: 50px;
+    border-radius: 8px;
+}
+
+
+//FOOTER
+.Home-Footer{
+    justify-content: center;
+    display: flex;
+}
+.Home-Footer-Caja{
+    display: flex;
+    justify-content: space-between;
+    width: 71%;
+}
+
+
