@@ -9,6 +9,7 @@ import RegistroSos from './Components/Pages/RegistroSos/RegistroSos';
 
 
 import Home from './Components/Pages/Home/Home';
+import Login from './Components/Pages/Login/Login';
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Bienvenida></Bienvenida>} />
           <Route path="/Portada" element={<Portada></Portada>} />
-          <Route path="/Registro" element={<Registro></Registro>} />
 
+          <Route path="/login" element={<Login></Login>} />
+          <Route path="/Registro" element={<Registro></Registro>} />
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
 
           <Route path="/Home" element={<Home></Home>} />

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import "./RegistroSos.scss"
 
 
 export default function RegistroSos(){
   const {register, handleSubmit} =useForm();
-  
+  const [orden, setOrden] = useState(false);
+
   const onSubmit = (data) => {
   console.log(data);
 }
@@ -31,13 +32,16 @@ export default function RegistroSos(){
             <input id="email" placeholder='Direccion  e.mail'
                    {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}/>
 
-            <input id="movil" placeholder='Movil'
-                   {...register("movil", { required: true })}/>    
+              <input id="movil" placeholder='Movil'
+                   {...register("movil", { required: true ,
+                   pattern: /^(\+34|0034|34)?[67]\d{8}$/
+                   })}/>    
+   
 
-            <input name="password" id="password" type="password" placeholder='Compañia de Seguros/Nº Poliza'
-                   {...register("password", {
+            <input name="poliza" id="poliza"  placeholder='Compañia de Seguros/Nº Poliza'
+                   {...register("poliza", {
                        required: true,
-
+                     //   pattern: /^(\+34|0034|34)?[67]\d{8}$/
                    })}/>
 
             <button type="submit">Guardar Perfil</button>
