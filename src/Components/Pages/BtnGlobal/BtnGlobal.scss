@@ -7,13 +7,25 @@
     border-color: rgba(13, 51, 32, 0.1);
     color: white;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 5px;
 
 }
+.BtnGlobalDiv{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
 .BtnGlobal-img{
     height: 100%;
-    margin-left: 46px;
+    //margin-left: 46px;
+}
+
+.BtnGlobaltxt{
+    margin: 0px;
 }
