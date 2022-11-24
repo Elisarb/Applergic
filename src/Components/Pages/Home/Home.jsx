@@ -6,7 +6,11 @@ import BtnShare from '../../Componentes/Btn-Share/Btn-Share'
 import Img1 from '../../../Assets/Imagen-Home.png'
 import Img2 from '../../../Assets/Menú-Home.png'
 import Img3 from '../../../Assets/info-Home.png'
+import ImgEscanear from '../../../Assets/Escanear.png'
+import ImgBuscar from '../../../Assets/Buscar.png'
+import ImgSOS from '../../../Assets/SOS.png'
 import './Home.scss'
+import { BtnGlobal } from '../BtnGlobal/BtnGlobal'
 
 const Home = () => {
   return (
@@ -20,11 +24,18 @@ const Home = () => {
         <div className='Home-Main'>
 
             <div className='Home-Main-Caja-Arriba'>
-                <img className='Home-Main-img' src={Img1} alt="" />
+                <div className='Home-Main-Caja-caja'>
+                    <img className='Home-Main-img' src={Img1} alt="" />
+                </div>
             </div>
 
             <div className='Home-Main-Caja-Abajo'>
-                
+            <BtnGlobal name="Escanear" image={ImgEscanear} class="rgb(38 199 220)"/>
+            <p>Escanea un nuevo producto.</p>
+            <BtnGlobal name="Buscar" image={ImgBuscar} class="rgb(196 196 196)"/>
+            <p>Busca un comercio o restaurante para ti.</p>
+            <BtnGlobal name="S.O.S." image={ImgSOS} class="rgb(248 73 113)"/>
+            <p>¿Necesitas ayuda urgente? contactanos con emergencias.</p>
             </div>
 
         </div>
@@ -34,6 +45,7 @@ const Home = () => {
                 <BtnFav></BtnFav>
                 <BtnDiary></BtnDiary>
                 <BtnShare></BtnShare>
+               
             </div>
         </div>
     </div>
