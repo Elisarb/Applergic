@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Bienvenida/Bienvenida.scss';
 import logo from '../../../Assets/Logo.png' ;
-import Carrusel from './Carousel/Carousel.jsx'
 import { render } from "react-dom";
 import ControlledCarousel from "./Carousel/Carrusel.jsx"
 

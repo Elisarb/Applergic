@@ -1,0 +1,108 @@
+.alergias{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    .arriba{
+        width:100%;
+    }
+
+    .centrado{
+        height:auto;
+        width:auto;
+        margin:30px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        font-family: Monserrat-bold;
+        font-size:20px;
+        text-align: center;
+        width:100%;
+    }
+    
+    p{
+        font-family: Monserrat-medium;
+        font-size:14px;
+        text-align: center; 
+        color:grey;
+        line-height:2;
+        width:100%;
+    }
+
+    .cuadro{
+        height:70vw;
+        width:70vw;
+        border: 1px solid black;
+    }
+
+    .content-input input,
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+ 
+.content-input input{
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+
+    .content-input{
+        position: relative;
+        margin-bottom: 30px;
+        padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar 
+            el elemento <i> en este espacio*/
+        display: block;
+
+        input + i{
+            background: white;
+            border:1px solid rgb(168, 168, 168);
+            color:rgb(168, 168, 168);
+            font-family: Monserrat-regular;
+            font-style: normal;
+            padding:2px 5px 2px 5px;
+            position: absolute; 
+            left: 0;
+            top: 0;
+     }
+
+     input[type=checkbox ] + i{
+        width: auto;
+        height: 30px;
+        border-radius: 15px;
+    }
+    // input[type=checkbox] + i::after{
+    //     content: {};
+    // }
+    }
+
+    .content-input input[type=checkbox] + i:after{
+        position: absolute;
+        font-size: 10px;
+        color: rgba(255,255,255,0.6);
+        top: 8px;
+        left: 4px;
+        // opacity: 0 /* Ocultamos este elemento */;
+        transition: all 0.25s ease 0.25s;
+    }
+    
+    /* Cuando esté checkeado cambiamos la opacidad a 1 y lo mostramos */
+    .content-input input[type=checkbox]:checked + i:after{
+     opacity: 1;
+
+    }
+
+    .content-input input[type=checkbox]:checked + i{
+               background: rgb(248,73,113);
+               color:white;
+               border:1px solid rgb(248,73,113);
+       }
+
+
+
+
+}
