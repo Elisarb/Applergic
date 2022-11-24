@@ -3,6 +3,50 @@
     flex-direction: column;
     height: 100vh;
 }
+.Hamburguesa-Wrap{
+    //height: 10vh;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-bottom-color:black ;
+    width: 64%;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1000;
+}
+.Hamburguesa-Btn-Caja{
+    height: 48px;
+    width: 48px;
+    margin-left: 90%;
+    
+}
+.Hamburguesa-btn{
+    width: 24px;
+    height: 24px;
+   
+}
+.Hamburguesa-Opciones-Caja{}
+
+.Hamburguesa-Opcion-Caja{
+    border: 1px solid red;
+    display: flex;
+    height: 48px;
+    width: 180px;
+    
+    margin: 5px;
+    margin-left: 16px;
+    align-items: center;
+}
+
+.Hamburguesa-Opcion-img{
+    height: 75%;
+}
+.Hamburguesa-Opcion-txt{
+    margin-left: 5px;
+    text-decoration: none!important;
+}
+
 //HEADER
 .Home-Header{
     display: flex;
