@@ -13,6 +13,7 @@ import Fav from './Components/Pages/Favoritos/Favoritos';
 
 
 import Diario from './Components/Pages/Diario/Diario';
+import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
 
 
 function App() {
@@ -24,13 +25,14 @@ function App() {
           <Route path="/" element={<Bienvenida></Bienvenida>} />
           <Route path="/Portada" element={<Portada></Portada>} />
 
-          <Route path="/login" element={<Login></Login>} />
+          <Route path="/Login" element={<Login></Login>} />
           <Route path="/Registro" element={<Registro></Registro>} />
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
           <Route path="/Home" element={<Home></Home>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
           <Route path="/Diario" element={<Diario></Diario>} />
+          <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
 
         
 
