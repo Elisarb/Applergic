@@ -1,6 +1,6 @@
 import './Btn-Diary.scss';
-import Btn1 from '../../../Assets/Btn-Diary-Active.png'
-import Btn2 from '../../../Assets/Btn-Diary-Inactive.png'
+import Btn1 from '../../../../Assets/Btn-Diary-Active.png'
+import Btn2 from '../../../../Assets/Btn-Diary-Inactive.png'
 import { Link, useLocation } from 'react-router-dom';
 const BtnDiary = () => {
         let location = useLocation();

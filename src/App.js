@@ -11,7 +11,7 @@ import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
 import Fav from './Components/Pages/Favoritos/Favoritos';
 
-import { BtnGlobal } from './Components/Pages/BtnGlobal/BtnGlobal';
+
 import Diario from './Components/Pages/Diario/Diario';
 
 

@@ -1,6 +1,6 @@
 import './Btn-Fav.scss';
-import Btn1 from '../../../Assets/Btn-Fav-Active.png'
-import Btn2 from '../../../Assets/Btn-Fav-Inactive.png'
+import Btn1 from '../../../../Assets/Btn-Fav-Active.png'
+import Btn2 from '../../../../Assets/Btn-Fav-Inactive.png'
 import { Link, useLocation } from 'react-router-dom';
 const BtnFav = () => {
         let location = useLocation();
