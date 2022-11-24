@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
 import { useNavigate } from 'react-router-dom';
-import { BtnGlobal } from '../BtnGlobal/BtnGlobal';
+
+import { BtnGlobal2 } from '../BtnGlobal2/BtnGlobal2';
 
 
 export default function Login(){
@@ -25,25 +26,27 @@ export default function Login(){
 
       </div>
       
-        <form  className='fooorm' onSubmit={handleSubmit(onSubmit)}>
+        <form  className='form-login' onSubmit={handleSubmit(onSubmit)}>
         
             <input id="email" placeholder='Email'
-                   {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}/>
+                   {...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
 
             <input name="password" id="password" type="password" placeholder='Password'
                    {...register("password", {
                        required: true,
-                       pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+                       pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
                    })}/>
-              <a>¿Olvidaste tu contraseña?</a>
+              <p  className='form-login-a'>¿Olvidaste tu contraseña?</p>
             
-            <BtnGlobal type="submit" name="Entrar" class="rgb(38 199 220)"/>
+              <BtnGlobal2 type="submit" name="Entrar" class="rgb(196 196 196)"/>
         </form>
        
-       <div className='abaajo'>
+       <div className='text-bottom'>
         <p>¿Nuevo en Applergic?</p>
-        <button className='liink' onClick={()=> navigate ("/Registro")}>Crea tu cuenta aqui</button>
+        <button className='text-bottom-button' onClick={()=> navigate ("/Registro")}>Crea tu cuenta aqui</button>
+        
+        <a>Me registrare en otro momento</a>
         </div>
        </>
        

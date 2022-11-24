@@ -19,10 +19,14 @@ export default function RegistroSos(){
 
       <>     
       <div className='arribaas'>
+      <div className='top-top-2'>
       <Link to="/Registro">
-           <VolverGlobal/>
-      </Link>
+            <VolverGlobal/>
+       </Link>
       <p>2 de 4</p>
+     
+      </div>
+      <div className='top-top-3'>
       <div className='title-1'>
       <h1>Vamos a añadir tu contacto en caso de emergencia</h1>
       </div>
@@ -30,6 +34,7 @@ export default function RegistroSos(){
       <p>Nos pondremos en contacto con tu persona de confianza y/o 
        compañia de seguros en caso de emergencias.
       </p>
+      </div>
       </div>
       </div>
       
