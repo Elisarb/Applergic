@@ -11,7 +11,7 @@ export default function RegistroAlergias(){
   console.log(data);
 }
 
-const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Penne"]
+const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Penne", "Gluten"]
 let alergenosOrdenados= [];
 const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 let ingredientes = [];
@@ -50,6 +50,20 @@ function FiltrarAlfabeticamente(array,alfabeto){
            
         
             <div className="cuadro">
+            {
+            ingredientes.map((letra) => { return(
+                <div className="bolitas">
+                    <a href={`#${letra[0][0]}`} >
+
+                    <p>{letra[0][0]}</p>
+
+                    </a>
+                </div>
+            )
+            }
+            )
+            }
+
 
             </div>
             <form  className='' onSubmit={handleSubmit(onSubmit)}>
@@ -57,12 +71,12 @@ function FiltrarAlfabeticamente(array,alfabeto){
             {
             ingredientes.map((letra) => { return(
                 <div>
-                    <h1>{letra[0][0]}</h1>
+                    <h1 id={letra[0][0]}>{letra[0][0]}</h1>
                     
                         {letra.map((alergeno)=>{
                             return(
                                 <label class="content-input">
-                                <input type="checkbox" name="Vehiculo" id="autopista" value="autopista"/>
+                                <input type="checkbox" name="Vehiculo" value="autopista"/>
                                 <i>{alergeno}</i>
                                 </label>
                             )
