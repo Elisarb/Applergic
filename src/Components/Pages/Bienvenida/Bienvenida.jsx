@@ -10,7 +10,7 @@ const Bienvenida = () => {
 
   return (
     <div>
-        <div class="header">
+        <div className="header">
             <img src={logo} alt="logo Applergic" className="logo"/>
         </div>
         <div className="carrusel">
