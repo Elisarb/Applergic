@@ -33,9 +33,33 @@
     }
 
     .cuadro{
-        height:70vw;
-        width:70vw;
-        border: 1px solid black;
+        height:60vw;
+        width:60vw;
+        border: 1px solid rgb(230,230,230);
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bolitas{
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        border: 1px solid rgb(168,168,168);
+        background-color: rgb(168,168,168);
+        margin: 10px;
+
+        :hover{
+            background-color: rgb(248,73,113);
+            
+        }
+
+        p{
+            color:white;
+            text-decoration: none;
+
+        }
     }
 
     .content-input input,
@@ -102,7 +126,11 @@
                border:1px solid rgb(248,73,113);
        }
 
-
+    form{
+        h1{
+            padding-top:20px;
+        }
+    }
 
 
 }
