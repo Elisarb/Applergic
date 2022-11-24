@@ -10,6 +10,7 @@ import Login from './Components/Pages/Login/Login';
 import Fav from './Components/Pages/Favoritos/Favoritos';
 
 import { BtnGlobal } from './Components/Pages/BtnGlobal/BtnGlobal';
+import Diario from './Components/Pages/Diario/Diario';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 
           <Route path="/Home" element={<Home></Home>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
+          <Route path="/Diario" element={<Diario></Diario>} />
 
         
 
