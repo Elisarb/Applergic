@@ -32,7 +32,6 @@ export default function Registro(){
             <input id="name" placeholder='Name'
                    {...register("name", { required: true })}/>
 
-
         
             <input id="email" placeholder='Email'
                    {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}/>
