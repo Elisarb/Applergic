@@ -4,7 +4,9 @@ import "./Registro.scss"
 import camara from '../../../Assets/camara.png'
 import subirfoto from '../../../Assets/subirfoto.png'
 // import { useNavigate } from 'react-router-dom';
-import { BtnGlobal } from '../BtnGlobal/BtnGlobal';
+import { Link } from 'react-router-dom';
+import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
+import { BtnGlobal2 } from '../BtnGlobal2/BtnGlobal2';
 
 export default function Registro(){
   const {register, handleSubmit} =useForm();
@@ -15,19 +17,29 @@ export default function Registro(){
 
     return (
 
-      <div className='toodo'>
-      <div className='arribaa'>
+       <>     
+       <div className='arribaas'>
+       <div className='top-top-2'>
+       <Link to="/login">
+            <VolverGlobal/>
+       </Link>
+       <p>1 de 4</p>
+       </div>
+       <div className='top-top-3'>
+       <div className='title-1'>
+       <h1>Dinos quien eres</h1>
+       </div>
        
-      <p>1 de 4</p>
-      <h1>Dinos quien eres</h1>
-      <div className='footo'>
-
+       <div className='footo'>
       <div className='footo2'>
       <img  className='imaaa' src={camara}/>
       <img  className='imaaaa' src={subirfoto}/>
       </div>
       </div>
-      </div>
+       </div>
+       </div>
+
+   
       
         <form  className='foorm' onSubmit={handleSubmit(onSubmit)}>
 
@@ -36,7 +48,7 @@ export default function Registro(){
 
         
             <input id="email" placeholder='Email'
-                   {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}/>
+                   {...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
             <input id="movil" placeholder='Movil'
                    {...register("movil", { required: true ,
@@ -46,13 +58,13 @@ export default function Registro(){
             <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABCedf123"
                    {...register("password", {
                        required: true,
-                       pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+                       pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
                    })}/>
 
-              <BtnGlobal type="submit" name="Guardar Perfil" class={handleSubmit ? "rgb(196 196 196)" : 'rgb(248 73 113)'}/>
+              <BtnGlobal2 type="submit" name="Guardar Perfil" class="rgb(196 196 196)"/>
             
         </form>
-        </div>
+        </>
        
     )
 }
