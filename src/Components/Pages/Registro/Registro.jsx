@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import "./Registro.scss"
 import camara from '../../../Assets/camara.png'
 import subirfoto from '../../../Assets/subirfoto.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function Registro(){
   const {register, handleSubmit} =useForm();
-  
+  const navigate = useNavigate()
   const onSubmit = (data) => {
   console.log(data);
 }
@@ -18,6 +19,7 @@ export default function Registro(){
       <p>1 de 4</p>
       <h1>Dinos quien eres</h1>
       <div className='footo'>
+
       <div className='footo2'>
       <img  className='imaaa' src={camara}/>
       <img  className='imaaaa' src={subirfoto}/>
@@ -36,15 +38,18 @@ export default function Registro(){
                    {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}/>
 
             <input id="movil" placeholder='Movil'
-                   {...register("movil", { required: true })}/>    
+                   {...register("movil", { required: true ,
+                   pattern: /^(\+34|0034|34)?[67]\d{8}$/
+                   })}/>    
 
-            <input name="password" id="password" type="password" placeholder='Password'
+            <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABCedf123"
                    {...register("password", {
                        required: true,
                        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
                    })}/>
 
-            <button type="submit">Guardar Perfil</button>
+
+            <button className='liink' onClick={()=> navigate ("/Emergencias")}type="submit">Guardar Perfil</button>
         </form>
         </div>
        
