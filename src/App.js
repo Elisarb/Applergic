@@ -10,6 +10,7 @@ import RegistroSos from './Components/Pages/RegistroSos/RegistroSos';
 
 import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
+import Fav from './Components/Pages/Favoritos/Favoritos';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
 
           <Route path="/Home" element={<Home></Home>} />
+          <Route path="/Favoritos" element={<Fav></Fav>} />
+
 
         </Routes>
     </Router>
