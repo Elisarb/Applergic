@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .foorm{
@@ -19,7 +20,7 @@
             border: none;
             border-bottom: 2px solid rgb(216, 213, 213);
             width: 75%;
-            font-size: 22px;
+            font-size: 14px;
             height: 66px;
         
         }
@@ -67,10 +68,19 @@
     justify-content: center;
 }
 
-.bb{
-    background-color: aqua;
 
+
+.title-1{
+    display: flex;
+    justify-content: center;
+    width: 64%;
+    text-align: center;
+  
 }
-.cc{
-    background-color: black;
+.title-2{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    text-align: center;
+  
 }

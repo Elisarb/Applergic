@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
 import { useNavigate } from 'react-router-dom';
+import { BtnGlobal } from '../BtnGlobal/BtnGlobal';
 
 
 export default function Login(){
@@ -36,8 +37,8 @@ export default function Login(){
                        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
                    })}/>
               <a>¿Olvidaste tu contraseña?</a>
-            <button type="submit">Entrar</button>
-           
+            
+            <BtnGlobal type="submit" name="Entrar" class="rgb(38 199 220)"/>
         </form>
        
        <div className='abaajo'>

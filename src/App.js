@@ -7,17 +7,20 @@ import Registro from './Components/Pages/Registro/Registro';
 import RegistroAlergias from './Components/Pages/RegistroAlergias/RegistroAlergias';
 
 import RegistroSos from './Components/Pages/RegistroSos/RegistroSos';
-
-
 import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
 import Fav from './Components/Pages/Favoritos/Favoritos';
+
+import { BtnGlobal } from './Components/Pages/BtnGlobal/BtnGlobal';
+import Diario from './Components/Pages/Diario/Diario';
 
 
 function App() {
   return (
     <Router>
-        <Routes>
+        <Routes>  
+           
+        
           <Route path="/" element={<Bienvenida></Bienvenida>} />
           <Route path="/Portada" element={<Portada></Portada>} />
 
@@ -27,7 +30,9 @@ function App() {
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
           <Route path="/Home" element={<Home></Home>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
+          <Route path="/Diario" element={<Diario></Diario>} />
 
+        
 
         </Routes>
     </Router>
