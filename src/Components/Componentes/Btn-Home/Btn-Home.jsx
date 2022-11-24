@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const BtnHome = () => {
     return(
         
-            <div className='Btn-Home-Caja'><Link to={`/`}>
+            <div className='Btn-Home-Caja'><Link to={`/Home`}>
                     <img className='Btn-Home-Image' src={Btn1} alt="" /></Link>
             </div>
         
