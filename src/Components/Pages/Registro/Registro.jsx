@@ -6,7 +6,7 @@ import subirfoto from '../../../Assets/subirfoto.png'
 // import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
-import { BtnGlobal2 } from '../BtnGlobal2/BtnGlobal2';
+import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 
 export default function Registro(){
   const {register, handleSubmit} =useForm();

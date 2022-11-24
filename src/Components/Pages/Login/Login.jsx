@@ -4,7 +4,7 @@ import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
 import { useNavigate } from 'react-router-dom';
 
-import { BtnGlobal2 } from '../BtnGlobal2/BtnGlobal2';
+import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 
 
 export default function Login(){

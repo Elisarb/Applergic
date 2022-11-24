@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
-import { BtnGlobal } from '../BtnGlobal/BtnGlobal';
+import { BtnGlobal } from '../../Componentes/Shared/BtnGlobal/BtnGlobal';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import "./RegistroSos.scss"
 
