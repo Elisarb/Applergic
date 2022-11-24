@@ -3,11 +3,12 @@ import { useForm } from "react-hook-form";
 import "./Registro.scss"
 import camara from '../../../Assets/camara.png'
 import subirfoto from '../../../Assets/subirfoto.png'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { BtnGlobal } from '../BtnGlobal/BtnGlobal';
 
 export default function Registro(){
   const {register, handleSubmit} =useForm();
-  const navigate = useNavigate()
+//   const navigate = useNavigate()
   const onSubmit = (data) => {
   console.log(data);
 }
@@ -16,6 +17,7 @@ export default function Registro(){
 
       <div className='toodo'>
       <div className='arribaa'>
+       
       <p>1 de 4</p>
       <h1>Dinos quien eres</h1>
       <div className='footo'>
@@ -47,8 +49,8 @@ export default function Registro(){
                        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
                    })}/>
 
-
-            <button className='liink' onClick={()=> navigate ("/Emergencias")}type="submit">Guardar Perfil</button>
+              <BtnGlobal type="submit" name="Guardar Perfil" class={handleSubmit ? "rgb(196 196 196)" : 'rgb(248 73 113)'}/>
+            
         </form>
         </div>
        
