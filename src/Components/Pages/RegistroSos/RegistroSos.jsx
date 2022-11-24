@@ -14,7 +14,7 @@ export default function RegistroSos(){
     return (
 
       <div className='toodo'>
-      <div className='arribaa'>
+      <div className='arribaas'>
       <p>2 de 4</p>
       <h1>Vamos a añadir tu contacto en caso de emergencia</h1>
       <p>Nos pondremos en contacto con tu persona de confianza y/o 
