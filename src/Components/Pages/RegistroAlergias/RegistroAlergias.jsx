@@ -3,14 +3,39 @@ import { useForm } from "react-hook-form";
 import "./RegistroAlergias.scss"
 import { useNavigate } from 'react-router-dom';
 
-    const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche" ]
 
-export default function Registro(){
+export default function RegistroAlergias(){
   const {register, handleSubmit} =useForm();
   const navigate = useNavigate()
   const onSubmit = (data) => {
   console.log(data);
 }
+
+const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Penne"]
+let alergenosOrdenados= [];
+const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+let ingredientes = [];
+
+function OrderAlergenos(){
+    alergenosOrdenados = alergenos.sort();
+}
+
+
+function FiltrarAlfabeticamente(array,alfabeto){
+    alfabeto.forEach(letra => {
+        let nuevo = array.filter(aler => aler[0] === letra)
+        if (nuevo.length > 0){
+            ingredientes.push(nuevo)
+        }else{
+            
+        }   
+        });
+};
+
+    OrderAlergenos()
+    console.log(alergenosOrdenados)
+    FiltrarAlfabeticamente(alergenosOrdenados,alfabeto)
+    console.log(ingredientes)
 
     return (
 
@@ -28,12 +53,22 @@ export default function Registro(){
 
             </div>
             <form  className='' onSubmit={handleSubmit(onSubmit)}>
+                
             {
-            alergenos.map((alergeno) => { return(
-                <label class="content-input">
-                    <input type="checkbox" name="Vehiculo" id="autopista" value="autopista"/>
-                    <i>{alergeno}</i>
-                </label>
+            ingredientes.map((letra) => { return(
+                <div>
+                    <h1>{letra[0][0]}</h1>
+                    
+                        {letra.map((alergeno)=>{
+                            return(
+                                <label class="content-input">
+                                <input type="checkbox" name="Vehiculo" id="autopista" value="autopista"/>
+                                <i>{alergeno}</i>
+                                </label>
+                            )
+                        })}
+                        
+                </div>
         )})}
 
             <button className='liink' onClick={()=> navigate ("/Emergencias")}type="submit">Guardar Perfil</button>
