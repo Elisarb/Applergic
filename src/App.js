@@ -35,10 +35,9 @@ function App() {
 
     <JwtContext.Provider value={{ jwt, setJwt }}>
     
-      <Router>  <AuthButton/>
-          <Routes>  
+      
 
-    <Router>
+    <Router><AuthButton/>
       <ApplergicContextProvider>  
         <Routes>    
 
