@@ -1,0 +1,38 @@
+.c-valorationPage{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.c-valorationPage__volver{
+	width: 100vw;
+	height: 24px;
+	margin-top: 7.9vh;
+	margin-left: 15.2vw;
+	color: #26c7dc;
+	:link{
+		font-family: Montserrat-Medium;
+		text-decoration-color: #26c7dc;
+		text-decoration: none;
+		color: #26c7dc;
+	}
+
+	
+}
+.c-valorationPage__logo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 81.5vw;
+	height: 53.7vh;
+	text-align: center;
+	margin-bottom: 116px;
+	margin-top: 106px;
+}
+.c-valorationPage__volver{
+	margin-bottom: 24px;
+	margin-top: 117px;
+}

@@ -13,6 +13,7 @@ import Fav from './Components/Pages/Favoritos/Favoritos';
 
 
 import Diario from './Components/Pages/Diario/Diario';
+import Valoraciones from './Components/Pages/Valoraciones/Valoraciones';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/Home" element={<Home></Home>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
           <Route path="/Diario" element={<Diario></Diario>} />
+          <Route path="/Valoraciones" element={<Valoraciones></Valoraciones>} />
 
         
 
