@@ -20,6 +20,7 @@ import React from 'react';
 import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
 import Escaneo from './Components/Pages/Escaneo/Escaneo';
+import { ApplergicContextProvider } from '../src/Context/context';
 
 
 
@@ -27,8 +28,8 @@ function App() {
   
   return (
     <Router>
-        <Routes>  
-           
+      <ApplergicContextProvider>  
+        <Routes>    
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
           <Route path="/Login" element={<Login></Login>} />
@@ -42,9 +43,9 @@ function App() {
           <Route path="/DiarioLocal" element={<DiarioLocal></DiarioLocal>} />
           <Route path="/DiarioGlobal" element={<DiarioGlobal></DiarioGlobal>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
-          <Route path="/Buscar" element={<Buscar></Buscar>} />
-         
+          <Route path="/Buscar" element={<Buscar></Buscar>} />  
         </Routes>
+        </ApplergicContextProvider> 
     </Router>
 
 

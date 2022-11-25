@@ -1,15 +1,26 @@
-import React from 'react';
 import "./RegistroAlergias.scss";
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { ApplergicContext } from "../../../Context/context";
+import { useContext } from 'react';
 
 
 export default function RegistroAlergias(){
-    const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Pasta", "Gluten"]
+    // let alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Pasta", "Gluten"]
     let alergenosOrdenados= [];
-    const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"];
     let ingredientes = [];
     let alergiasSeleccionadas = []
+    let allergens = [];
+    const { alergenos } = useContext(ApplergicContext);
+
+    alergenos.map((item)=>
+    {return(
+        allergens.push(item.allergensName)
+        
+    )})
+    console.log(allergens)
 
     const {handleSubmit} = useForm();
     const handleChange = (e) => {
@@ -29,14 +40,17 @@ export default function RegistroAlergias(){
 
     };
 
+
 function OrderAlergenos(){
-    alergenosOrdenados = alergenos.sort();
+    alergenosOrdenados = allergens.sort();
 }
+
 
 
 function FiltrarAlfabeticamente(array,alfabeto){
     alfabeto.forEach(letra => {
-        let nuevo = array.filter(aler => aler[0] === letra)
+
+        let nuevo = array.filter(aler => aler[0] == letra)
         if (nuevo.length > 0){
             ingredientes.push(nuevo)
         }else{
@@ -90,11 +104,11 @@ const onSubmit = () => {
                 <div className="cuadroPorLetra">
                     <h1 id={letra[0][0]}>{letra[0][0]}</h1>
                     
-                        {letra.map((alergeno, index)=>{
+                        {letra.map((ingredientes, index)=>{
                             return(
                                 <label className="content-input">
-                                <input type="checkbox" value={`${alergeno}`} onChange={handleChange} />
-                                <i>{alergeno}</i>
+                                <input type="checkbox" value={`${ingredientes}`} onChange={handleChange} />
+                                <i>{ingredientes}</i>
                                 </label>
                             )
                         })}
