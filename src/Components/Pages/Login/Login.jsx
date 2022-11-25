@@ -16,7 +16,7 @@ export default function Login(){
 
     return (
 
-       <>
+      <div className="pag-login">
       <div className='arribaa'> 
 
      <img  className='imatop' src={comidas}/>
@@ -48,7 +48,7 @@ export default function Login(){
         
         <a>Me registrare en otro momento</a>
         </div>
-       </>
+       </div>
        
     )
 }

@@ -1,10 +1,7 @@
 import React from 'react';
-
 import "./RegistroAlergias.scss";
-
-
-
-
+import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
+import { useForm } from "react-hook-form";
 
 export default function RegistroAlergias(){
     const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Pasta", "Gluten"]
@@ -13,9 +10,10 @@ export default function RegistroAlergias(){
     let ingredientes = [];
     let alergiasSeleccionadas = []
 
-
+    const {handleSubmit} = useForm();
     const handleChange = (e) => {
-    const { value, checked } = e.target;          
+    const { value, checked } = e.target;
+
 
     if (checked === true) {
         alergiasSeleccionadas.push(value);
@@ -26,7 +24,7 @@ export default function RegistroAlergias(){
         alergiasSeleccionadas.splice(index,1);
     }
 
-    console.log(alergiasSeleccionadas);
+    // console.log(alergiasSeleccionadas);
 
     };
 
@@ -46,8 +44,8 @@ function FiltrarAlfabeticamente(array,alfabeto){
         });
 };
 
-const handleSubmit = () => {
-
+const onSubmit = () => {
+    console.log(alergiasSeleccionadas);
 }
 
 
@@ -68,7 +66,6 @@ const handleSubmit = () => {
       <h1>Ahora selecciona tus alergias e intolerancias</h1>
       <p>Los elementos marcados serán identificados en tu búsqueda como peligrosos para ti.</p>
            
-        
             <div className="cuadro">
             {
             ingredientes.map((letra) => { return(
@@ -82,8 +79,10 @@ const handleSubmit = () => {
             )})}
 
 
+
+
             </div>
-            <form  className=''>
+            <form  className=''  onSubmit={handleSubmit(onSubmit)}>
                 
             {
             ingredientes.map((letra) => { return(
@@ -92,7 +91,7 @@ const handleSubmit = () => {
                     
                         {letra.map((alergeno, index)=>{
                             return(
-                                <label class="content-input">
+                                <label className="content-input">
                                 <input type="checkbox" value={`${alergeno}`} onChange={handleChange} />
                                 <i>{alergeno}</i>
                                 </label>
@@ -101,10 +100,12 @@ const handleSubmit = () => {
   
                 </div>
                 
+                
         )})}
 
-        {/* <BtnGlobal2 type="submit" name="Guardar" class="rgb(38,199,220)"/> */}
-            
+        <div className="btn-container">
+            <BtnGlobal2 type="submit" name="Guardar" class="rgb(38,199,220)"/>
+        </div>
         </form>
         </div>
         </div>
