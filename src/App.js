@@ -12,11 +12,15 @@ import Login from './Components/Pages/Login/Login';
 import Fav from './Components/Pages/Favoritos/Favoritos';
 
 
-import Diario from './Components/Pages/Diario/Diario';
+import Diario from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
+import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
+import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
+import Escaneo from './Components/Pages/Escaneo/Escaneo';
 
 
 function App() {
+  
   return (
     <Router>
         <Routes>  
@@ -31,7 +35,9 @@ function App() {
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
           <Route path="/Home" element={<Home></Home>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
-          <Route path="/Diario" element={<Diario></Diario>} />
+          <Route path="/Escaneo" element={<Escaneo></Escaneo>} />
+          <Route path="/DiarioLocal" element={<DiarioLocal></DiarioLocal>} />
+          <Route path="/DiarioGlobal" element={<DiarioGlobal></DiarioGlobal>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
 
         
