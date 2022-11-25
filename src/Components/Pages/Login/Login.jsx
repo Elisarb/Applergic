@@ -4,14 +4,23 @@ import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
 import { useNavigate } from 'react-router-dom';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
+import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
+import { API } from "../../Componentes/Shared/services/api";
 
 export default function Login(){
-  const {register, handleSubmit} =useForm();
+  const { register, handleSubmit } = useForm();
+  const { setJwt } = useContext(JwtContext);
 
 
   const navigate = useNavigate()
-  const onSubmit = (data) => {
-  console.log(data);
+
+  const onSubmit = formData => {
+    API.post('login', formData).then(res => {
+      console.log(res);
+        localStorage.setItem('token', res.data)
+        localStorage.setItem('user', JSON.stringify(res.data.user))
+        setJwt(true);
+    })
 }
 
     return (
@@ -28,11 +37,10 @@ export default function Login(){
       
         <form  className='form-login' onSubmit={handleSubmit(onSubmit)}>
         
-            <input id="email" placeholder='Email'
-                   {...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
+        <input id="userMail" placeholder='Email'
+                   {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
-
-            <input name="password" id="password" type="password" placeholder='Password'
+      <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABCedf123"
                    {...register("password", {
                        required: true,
                        pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
