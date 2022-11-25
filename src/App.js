@@ -29,12 +29,6 @@ function App() {
     <Router>
         <Routes>  
            
-        
-
-          <Route path="/" element={<Bienvenida></Bienvenida>} />
-          <Route path="/Portada" element={<Portada></Portada>} />
-
-
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
           <Route path="/Login" element={<Login></Login>} />
