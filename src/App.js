@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Link, Route, Routes, BrowserRouter as Router, Navigate } from "react-router-dom";
 import Bienvenida from './Components/Pages/Bienvenida/Bienvenida';
 import Portada from './Components/Pages/Portada/Portada';
 import Registro from './Components/Pages/Registro/Registro';
@@ -15,38 +15,43 @@ import Diario from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
 
 import Buscar from './Components/Pages/Buscar/Buscar';
-import React from 'react';
+import React, { useState } from 'react';
 
 import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
 import Escaneo from './Components/Pages/Escaneo/Escaneo';
+import AuthButton from './Components/Componentes/Shared/components/AuthButton/AuthButton';
 
-
+import { JwtContext } from './Components/Componentes/Shared/contexts/JwtContext'
+import RequireAuth from './Components/Componentes/Shared/components/RequireAuth/RequireAuth';
 
 function App() {
-  
+  const [jwt, setJwt] = useState(localStorage.getItem('token') || null);
   return (
-    <Router>
-        <Routes>  
-           
+    <JwtContext.Provider value={{ jwt, setJwt }}>
+    
+      <Router>  <AuthButton/>
+          <Routes>  
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
+  
           <Route path="/Login" element={<Login></Login>} />
-
+          <Route                  
+               path="/"
+               element={<Navigate to="/Home"/>} />
           <Route path="/Registro" element={<Registro></Registro>} />
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
-          <Route path="/Home" element={<Home></Home>} />
+          <Route path="/Home" element={<RequireAuth><Home></Home></RequireAuth>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
           <Route path="/Escaneo" element={<Escaneo></Escaneo>} />
           <Route path="/DiarioLocal" element={<DiarioLocal></DiarioLocal>} />
           <Route path="/DiarioGlobal" element={<DiarioGlobal></DiarioGlobal>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
           <Route path="/Buscar" element={<Buscar></Buscar>} />
-         
         </Routes>
     </Router>
-
+</JwtContext.Provider>
 
     )
 }

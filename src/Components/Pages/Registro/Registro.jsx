@@ -7,13 +7,16 @@ import subirfoto from '../../../Assets/subirfoto.png'
 import { Link } from 'react-router-dom';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
+import { API } from "../../Componentes/Shared/services/api";
 
 export default function Registro(){
   const {register, handleSubmit} =useForm();
-//   const navigate = useNavigate()
-  const onSubmit = (data) => {
-  console.log(data);
-}
+
+  const onSubmit = formData => {
+       API.post('register', formData).then(res => {
+           console.log('Register user',);
+       })
+   }
 
     return (
 
@@ -43,16 +46,20 @@ export default function Registro(){
       
         <form  className='foorm' onSubmit={handleSubmit(onSubmit)}>
 
-            <input id="name" placeholder='Name'
-                   {...register("name", { required: true })}/>
+            <input id="userName" placeholder='Name'
+                   {...register("userName", { required: true })}/>
 
         
-            <input id="email" placeholder='Email'
-                   {...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
+            <input id="userMail" placeholder='Email'
+                   {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
-            <input id="movil" placeholder='Movil'
-                   {...register("movil", { required: true ,
-                   pattern: /^(\+34|0034|34)?[67]\d{8}$/
+            <input id="userPhone" placeholder='Movil'
+                   {...register("userPhone", { required: true ,
+                   })}/>    
+              
+              <input id="userImage" placeholder='img'  defaultValue="a1233"
+                   {...register("userImage", { required: true ,
+                 
                    })}/>    
 
             <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABCedf123"
