@@ -56,3 +56,20 @@
 .imatop{
     height: 249px;
 }
+
+.pag-login{
+    animation-name:aparicionLogin;
+    animation-duration:1s;
+    animation-delay:0s;
+}
+
+@keyframes aparicionLogin{
+    0%{
+        opacity:0;
+        transform: scale(1) translateX(75px);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}

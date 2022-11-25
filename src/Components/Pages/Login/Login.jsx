@@ -4,7 +4,7 @@ import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
 import { useNavigate } from 'react-router-dom';
 
-import { BtnGlobal2 } from '../BtnGlobal2/BtnGlobal2';
+import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 
 
 export default function Login(){
@@ -16,7 +16,7 @@ export default function Login(){
 
     return (
 
-       <>
+      <div className="pag-login">
       <div className='arribaa'> 
 
      <img  className='imatop' src={comidas}/>
@@ -48,7 +48,7 @@ export default function Login(){
         
         <a>Me registrare en otro momento</a>
         </div>
-       </>
+       </div>
        
     )
 }

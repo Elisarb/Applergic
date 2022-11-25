@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
-import { BtnGlobal } from '../BtnGlobal/BtnGlobal';
+import { Link } from 'react-router-dom';
+import { BtnGlobal } from '../../Componentes/Shared/BtnGlobal/BtnGlobal';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import "./RegistroSos.scss"
 
 
 export default function RegistroSos(){
   const {register, handleSubmit} =useForm();
-  const navigate = useNavigate()
+
 
  
   const onSubmit = (data) => {
@@ -57,7 +57,6 @@ export default function RegistroSos(){
             <input name="poliza" id="poliza"  placeholder='Compañia de Seguros/Nº Poliza'
                    {...register("poliza", {
                        required: true,
-                     //   pattern: /^(\+34|0034|34)?[67]\d{8}$/
                    })}/>
 
        <BtnGlobal type="submit" name="Guardar Emergencias" class={onSubmit ? "rgb(196 196 196)" : 'rgb(248 73 113)'}/>
