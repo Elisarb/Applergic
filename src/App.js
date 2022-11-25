@@ -11,14 +11,11 @@ import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
 import Fav from './Components/Pages/Favoritos/Favoritos';
 
-
 import Diario from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
 
 import Buscar from './Components/Pages/Buscar/Buscar';
 import React from 'react';
-import UseContextComponent from './Components/Context/UseContextComponent';
-
 
 import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
@@ -52,7 +49,7 @@ function App() {
           <Route path="/DiarioGlobal" element={<DiarioGlobal></DiarioGlobal>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
           <Route path="/Buscar" element={<Buscar></Buscar>} />
-          <Route path="/Login" element={<UseContextComponent></UseContextComponent>} />
+         
         </Routes>
     </Router>
 
