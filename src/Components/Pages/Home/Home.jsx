@@ -23,15 +23,24 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
 const [open, setOpen] = useState(false);
+const [open2, setOpen2] = useState(false);
 const navigate = useNavigate()
 
   const handleClick = () => {
     setOpen(!open);
+    if(open === true && open2 === true){
+        setOpen2(!open2);
+    }
+
+    
   };
+  const handleClick2 = () => {
+    setOpen2(!open2);
+
+  };
+  console.log("1"+open)
+  console.log("2"+open2)
   
-  const Compartir = () => {
-    console.log("Compartir")
-  }
   const Traducir = () => {
     console.log("Traducir")
   }
@@ -42,7 +51,7 @@ const navigate = useNavigate()
     console.log("Salir")
   }
 
-  console.log(open)
+  
 
   return (
     <div className='Home-total'>
@@ -69,7 +78,7 @@ const navigate = useNavigate()
                     <h1 className='Hamburguesa-Opcion-txt'>Diario</h1>
                 </div>
                 
-                <div className='Hamburguesa-Opcion-Caja' onClick={()=> Compartir()}>
+                <div className='Hamburguesa-Opcion-Caja' onClick={handleClick2}>
                     <img className='Hamburguesa-Opcion-img' src={ImgCompartir} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>Compartir</h1>
                 </div>
@@ -87,6 +96,23 @@ const navigate = useNavigate()
                 </div>
             </div>
         </div>
+
+        <div hidden={open2? false: true} className="Compartir-Wrap">
+            
+            <div className='Compartir-Opciones-Caja'>
+                <h1>Compartir con:</h1>
+                <div className='Compartir-Opciones-Usuarios'>
+                <img src={ImgUsuario} alt="" />
+                <img src={ImgUsuario} alt="" />
+                <img src={ImgUsuario} alt="" />
+                <img src={ImgUsuario} alt="" />
+                </div>
+            </div>
+            <div className='Compartir-Btn-Caja'open={open2}onClick={handleClick2}>
+                <img className='Compartir-btn' src={ImgX} alt="" /> 
+            </div>
+        </div>
+
         <div className='Home-Header'>
             <div className='Home-Header-Header'>
             <div className='Home-Header-Caja'><img className='Home-Header-img' src={ImgMenú} alt="" onClick={handleClick} /></div>
@@ -116,7 +142,6 @@ const navigate = useNavigate()
                 <BtnHome></BtnHome>
                 <BtnFav></BtnFav>
                 <BtnDiary></BtnDiary>
-                <BtnShare></BtnShare>
                
             </div>
         </div>

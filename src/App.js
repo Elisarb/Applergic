@@ -20,7 +20,11 @@ import React, { useState } from 'react';
 import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
 import Escaneo from './Components/Pages/Escaneo/Escaneo';
+
 import AuthButton from './Components/Componentes/Shared/components/AuthButton/AuthButton';
+
+import { ApplergicContextProvider } from '../src/Context/context';
+
 
 import { JwtContext } from './Components/Componentes/Shared/contexts/JwtContext'
 import RequireAuth from './Components/Componentes/Shared/components/RequireAuth/RequireAuth';
@@ -28,10 +32,16 @@ import RequireAuth from './Components/Componentes/Shared/components/RequireAuth/
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem('token') || null);
   return (
+
     <JwtContext.Provider value={{ jwt, setJwt }}>
     
       <Router>  <AuthButton/>
           <Routes>  
+
+    <Router>
+      <ApplergicContextProvider>  
+        <Routes>    
+
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
   
@@ -48,8 +58,13 @@ function App() {
           <Route path="/DiarioLocal" element={<DiarioLocal></DiarioLocal>} />
           <Route path="/DiarioGlobal" element={<DiarioGlobal></DiarioGlobal>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
+
           <Route path="/Buscar" element={<Buscar></Buscar>} />
+
+          <Route path="/Buscar" element={<Buscar></Buscar>} />  
+
         </Routes>
+        </ApplergicContextProvider> 
     </Router>
 </JwtContext.Provider>
 

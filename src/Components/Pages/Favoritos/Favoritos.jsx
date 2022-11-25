@@ -12,7 +12,6 @@ const Fav = () => {
                 <BtnHome></BtnHome>
                 <BtnFav></BtnFav>
                 <BtnDiary></BtnDiary>
-                <BtnShare></BtnShare>
             </div>
         </div>
       </div>

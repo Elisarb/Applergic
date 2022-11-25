@@ -17,10 +17,10 @@ function ControlledCarousel() {
   function algo(){
     let cosita = document.getElementById("lastSlide");
     if (cosita != null){
-      if(cosita.classList.contains("active") === true){
+      if(cosita.classList.contains("active") === true ){
           let botoncito = document.querySelector(".btnFinBienvenida")
           botoncito.classList.add("btnFinBienvenidaActive");
-        }
+      }
     }
   }
 
