@@ -32,7 +32,6 @@ function App() {
         
 
           <Route path="/" element={<Bienvenida></Bienvenida>} />
-          <Route path="/Portada" element={<Portada></Portada>} />
 
 
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
