@@ -14,9 +14,14 @@ import Fav from './Components/Pages/Favoritos/Favoritos';
 
 import Diario from './Components/Pages/Diario/Diario';
 import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
+import Buscar from './Components/Pages/Buscar/Buscar';
+import React from 'react';
+import UseContextComponent from './Components/Context/UseContextComponent';
+
 
 
 function App() {
+  
   return (
     <Router>
         <Routes>  
@@ -25,7 +30,6 @@ function App() {
           <Route path="/" element={<Bienvenida></Bienvenida>} />
           <Route path="/Portada" element={<Portada></Portada>} />
 
-          <Route path="/Login" element={<Login></Login>} />
           <Route path="/Registro" element={<Registro></Registro>} />
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
@@ -33,12 +37,12 @@ function App() {
           <Route path="/Favoritos" element={<Fav></Fav>} />
           <Route path="/Diario" element={<Diario></Diario>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
-
-        
-
+          <Route path="/Buscar" element={<Buscar></Buscar>} />
+          <Route path="/Login" element={<UseContextComponent></UseContextComponent>} />
         </Routes>
     </Router>
-   
+
+
     )
 }
 
