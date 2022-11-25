@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
 import { useNavigate } from 'react-router-dom';
-
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
-
+import { FffContext } from "../../Context/UseContextComponent";
 
 export default function Login(){
   const {register, handleSubmit} =useForm();
+  const {user, setUser}= useContext(FffContext);
+  console.log(user);
+
+  const onSubmit = (data)=>{
+    
+    setUser({...data});
+   }
+
   const navigate = useNavigate()
-  const onSubmit = (data) => {
-  console.log(data);
-}
 
     return (
 

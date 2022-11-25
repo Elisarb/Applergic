@@ -1,7 +1,7 @@
 
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import { BtnGlobal } from '../../Componentes/Shared/BtnGlobal/BtnGlobal';
+import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import "./RegistroSos.scss"
 
@@ -59,7 +59,7 @@ export default function RegistroSos(){
                        required: true,
                    })}/>
 
-       <BtnGlobal type="submit" name="Guardar Emergencias" class={onSubmit ? "rgb(196 196 196)" : 'rgb(248 73 113)'}/>
+       <BtnGlobal2 type="submit" name="Guardar Emergencias" class= "rgb(196 196 196)"/>
         </form>
         <div className='qq'> 
         <a> Registrare mi usuario en otro momento</a>

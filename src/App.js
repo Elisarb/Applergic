@@ -14,9 +14,16 @@ import Fav from './Components/Pages/Favoritos/Favoritos';
 
 import Diario from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
+
+import Buscar from './Components/Pages/Buscar/Buscar';
+import React from 'react';
+import UseContextComponent from './Components/Context/UseContextComponent';
+
+
 import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
 import Escaneo from './Components/Pages/Escaneo/Escaneo';
+
 
 
 function App() {
@@ -26,9 +33,15 @@ function App() {
         <Routes>  
            
         
+
+          <Route path="/" element={<Bienvenida></Bienvenida>} />
+          <Route path="/Portada" element={<Portada></Portada>} />
+
+
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
           <Route path="/Login" element={<Login></Login>} />
+
           <Route path="/Registro" element={<Registro></Registro>} />
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
@@ -38,12 +51,12 @@ function App() {
           <Route path="/DiarioLocal" element={<DiarioLocal></DiarioLocal>} />
           <Route path="/DiarioGlobal" element={<DiarioGlobal></DiarioGlobal>} />
           <Route path="/Terminado" element={<RegistroTerminado></RegistroTerminado>} />
-
-        
-
+          <Route path="/Buscar" element={<Buscar></Buscar>} />
+          <Route path="/Login" element={<UseContextComponent></UseContextComponent>} />
         </Routes>
     </Router>
-   
+
+
     )
 }
 
