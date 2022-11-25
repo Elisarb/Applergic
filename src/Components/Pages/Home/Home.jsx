@@ -64,7 +64,7 @@ const navigate = useNavigate()
                 </div>
                 
                 
-                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/Diario")}>
+                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/DiarioGlobal")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgDiario} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>Diario</h1>
                 </div>
@@ -104,9 +104,7 @@ const navigate = useNavigate()
             <div className='Home-Main-Caja-Abajo'>
             <BtnGlobal name="Escanear" image={ImgEscanear} class="rgb(38 199 220)"/>
             <p>Escanea un nuevo producto.</p>
-            
-            <BtnGlobal name="Buscar" image={ImgBuscar} class="rgb(196 196 196)" onClick={()=> navigate ("/Buscar")}/>
-            
+            <BtnGlobal name="Buscar" image={ImgBuscar} class="rgb(196 196 196)"/>
             <p>Busca un comercio o restaurante para ti.</p>
             <BtnGlobal name="S.O.S." image={ImgSOS} class="rgb(248 73 113)"/>
             <p>¿Necesitas ayuda urgente? contactanos con emergencias.</p>

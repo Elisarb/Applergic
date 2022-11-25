@@ -7,8 +7,8 @@ const BtnDiary = () => {
     return(
         
             <div className='Btn-Diary-Caja'><Link to={`/DiarioGlobal`}>
-                    <img hidden={location.pathname==='/Diario'? false : true} className='Btn-Diary-Image' src={Btn1} alt="" />
-                    <img hidden={location.pathname==='/Diario'? true : false} className='Btn-Diary-Image' src={Btn2} alt="" /></Link>
+                    <img hidden={location.pathname==='/DiarioGlobal'? false : true} className='Btn-Diary-Image' src={Btn1} alt="" />
+                    <img hidden={location.pathname==='/DiarioGlobal'? true : false} className='Btn-Diary-Image' src={Btn2} alt="" /></Link>
             </div>
         
     )
