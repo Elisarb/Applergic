@@ -9,7 +9,7 @@ const Bienvenida = () => {
 
 
   return (
-    <div>
+    <div className="pag-bienvenida">
         <div className="header">
             <img src={logo} alt="logo Applergic" className="logo"/>
         </div>

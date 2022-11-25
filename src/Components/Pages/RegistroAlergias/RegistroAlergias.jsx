@@ -3,6 +3,7 @@ import "./RegistroAlergias.scss";
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { useForm } from "react-hook-form";
 
+
 export default function RegistroAlergias(){
     const alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Pasta", "Gluten"]
     let alergenosOrdenados= [];
@@ -102,7 +103,6 @@ const onSubmit = () => {
                 
                 
         )})}
-
         <div className="btn-container">
             <BtnGlobal2 type="submit" name="Guardar" class="rgb(38,199,220)"/>
         </div>
