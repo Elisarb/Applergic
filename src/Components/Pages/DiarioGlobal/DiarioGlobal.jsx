@@ -3,10 +3,10 @@ import BtnFav from "../../Componentes/Shared/Btn-Fav/Btn-Fav"
 import BtnHome from "../../Componentes/Shared/Btn-Home/Btn-Home"
 import BtnShare from "../../Componentes/Shared/Btn-Share/Btn-Share"
 
-const Diario = () => {
+const DiarioGlobal = () => {
     return (
       <div>
-        <h1>DIARIO :)</h1>
+        <h1>DIARIO Global</h1>
         <div className='Home-Footer'>
             <div className='Home-Footer-Caja'>
                 <BtnHome></BtnHome>
@@ -19,4 +19,4 @@ const Diario = () => {
     )
   }
   
-  export default Diario
+  export default DiarioGlobal
