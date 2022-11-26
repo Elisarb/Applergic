@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.foorm{
+.form-registro{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -24,6 +24,9 @@
         button{
             font-size: 17px;
             width: 80%;
+        }
+       #username{
+         visibility: hidden;
         }
 }
 .footo{

@@ -52,7 +52,7 @@ function App() {
           <Route path="/Registro" element={<Registro></Registro>} />
           <Route path="/Emergencias" element={<RegistroSos></RegistroSos>} />
           <Route path="/RegistroAlergias" element={<RegistroAlergias></RegistroAlergias>} />
-          <Route path="/Home" element={<RequireAuth><Home></Home></RequireAuth>} />
+          <Route path="/Home" element={<Home></Home>} />
           <Route path="/Favoritos" element={<Fav></Fav>} />
           <Route path="/Escaneo" element={<Escaneo></Escaneo>} />
           <Route path="/DiarioLocal" element={<DiarioLocal></DiarioLocal>} />
