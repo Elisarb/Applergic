@@ -89,7 +89,7 @@ function ControlledCarousel() {
      
     </Carousel>
       <div className="btnsSiguiente">
-          <a href=" ">Saltar</a>
+          <a href="/login ">Saltar</a>
           <a className="btnFinBienvenida" href="/login">Siguiente</a>
       </div>
     </div>
