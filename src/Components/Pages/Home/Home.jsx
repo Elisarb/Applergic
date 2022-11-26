@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import BtnDiary from '../../Componentes/Shared/Btn-Diary/Btn-Diary'
 import BtnFav from '../../Componentes/Shared/Btn-Fav/Btn-Fav'
 import BtnHome from '../../Componentes/Shared/Btn-Home/Btn-Home'
@@ -19,9 +19,12 @@ import ImgX from '../../../Assets/Btn-X.png'
 import './Home.scss'
 import { BtnGlobal } from '../../Componentes/Shared/BtnGlobal/BtnGlobal'
 import { Link, useNavigate } from 'react-router-dom'
+import { MyContext } from '../../Componentes/Shared/contexts/MyContext'
 
 
 const Home = () => {
+const {t} = useContext(MyContext)
+
 const [open, setOpen] = useState(false);
 const [open2, setOpen2] = useState(false);
 const navigate = useNavigate()
@@ -63,36 +66,36 @@ const navigate = useNavigate()
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgUsuario} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Perfil</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('perfil')}</h1>
                 </div>
                 
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/Favoritos")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgUFavorito} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Favorito</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('favorito')}</h1>
                 </div>
                 
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/DiarioGlobal")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgDiario} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Diario</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('salir')}Diario</h1>
                 </div>
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={handleClick2}>
                     <img className='Hamburguesa-Opcion-img' src={ImgCompartir} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Compartir</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('compartir')}</h1>
                 </div>
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> Traducir()}>
                     <img className='Hamburguesa-Opcion-img' src={ImgTraductor} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Traductor</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('traductor')}</h1>
                 </div>
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> Términos()}>
                     <img className='Hamburguesa-Opcion-img' src={ImgTerminos} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Términos</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('terminos')}</h1>
                 </div>
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> Salir()}>
                     <img className='Hamburguesa-Opcion-img' src="" alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>Salir</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('salir')}</h1>
                 </div>
             </div>
         </div>
@@ -100,7 +103,7 @@ const navigate = useNavigate()
         <div hidden={open2? false: true} className="Compartir-Wrap">
             
             <div className='Compartir-Opciones-Caja'>
-                <h1>Compartir con:</h1>
+                <h1>{t('compartircon')}</h1>
                 <div className='Compartir-Opciones-Usuarios'>
                 <img src={ImgUsuario} alt="" />
                 <img src={ImgUsuario} alt="" />
@@ -128,12 +131,12 @@ const navigate = useNavigate()
             </div>
 
             <div className='Home-Main-Caja-Abajo'>
-            <BtnGlobal name="Escanear" image={ImgEscanear} class="rgb(38 199 220)"/>
-            <p>Escanea un nuevo producto.</p>
-            <BtnGlobal name="Buscar" image={ImgBuscar} class="rgb(196 196 196)"/>
-            <p>Busca un comercio o restaurante para ti.</p>
-            <BtnGlobal name="S.O.S." image={ImgSOS} class="rgb(248 73 113)"/>
-            <p>¿Necesitas ayuda urgente? contactanos con emergencias.</p>
+            <BtnGlobal name={t('escanear')} image={ImgEscanear} class="rgb(38 199 220)"/>
+            <p>{t('escanearTexto')}</p>
+            <BtnGlobal name={t('buscar')} image={ImgBuscar} class="rgb(196 196 196)"/>
+            <p>{t('buscarTexto')}</p>
+            <BtnGlobal name={t('btnSOS')} image={ImgSOS} class="rgb(248 73 113)"/>
+            <p>{t('sos')}</p>
             </div>
 
         </div>

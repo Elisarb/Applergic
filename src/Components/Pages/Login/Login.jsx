@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
 import { API } from "../../Componentes/Shared/services/api";
+import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 
 export default function Login(){
+  const {t} = useContext(MyContext)
   const { register, handleSubmit } = useForm();
   const { setJwt } = useContext(JwtContext);
 
@@ -15,6 +17,7 @@ export default function Login(){
   const navigate = useNavigate()
 
   const onSubmit = formData => {
+
     API.post('login', formData).then(res => {
       console.log(res);
         localStorage.setItem('token', res.data)
@@ -30,8 +33,8 @@ export default function Login(){
 
      <img  className='imatop' src={comidas}/>
 
-      <h1>Bienvenido de nuevo</h1>
-      <p>Por favor, dinos tus datos para continuar</p>
+      <h1>{t('bienvenidologin')}</h1>
+      <p>{t('subtextloging')}</p>
 
       </div>
       
@@ -45,16 +48,18 @@ export default function Login(){
                        required: true,
                        pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
                    })}/>
-              <p  className='form-login-a'>¿Olvidaste tu contraseña?</p>
+              <p  className='form-login-a'>{t('olvido')}</p>
             
-              <BtnGlobal2 type="submit" name="Entrar" class="rgb(196 196 196)"/>
+              <BtnGlobal2 type="submit" name={t('entrar')} class="rgb(196 196 196)"/>
         </form>
        
        <div className='text-bottom'>
-        <p>¿Nuevo en Applergic?</p>
-        <button className='text-bottom-button' onClick={()=> navigate ("/Registro")}>Crea tu cuenta aqui</button>
+        <p>{t('nuevo')}</p>
+        <button className='text-bottom-button' onClick={()=> navigate ("/Registro")}>{t('crearcuenta')}</button>
         
-        <a>Me registrare en otro momento</a>
+        <button className='text-bottom-button' onClick={()=> navigate ("/Bienvenida")}>{t('otromomento')}</button>
+
+        {/* <a href='/Bienvenida' className='form-login-a'>{t('otromomento')}</a> */}
         </div>
        </>
        

@@ -74,10 +74,23 @@
         color:grey;
 
     }
+    .btnFinBienvenida1{
+        display: block !important;;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(0, 213, 255);
+        padding: 10px;
+    }
     .btnFinBienvenida{
-        display:none;
+        opacity: 0%;
     }
     .btnFinBienvenidaActive{
+        opacity: 100%;
         display: block !important;;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(0, 213, 255);
+        padding: 10px;
+
     }
 }
