@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
 import { API } from "../../Componentes/Shared/services/api";
@@ -16,10 +16,10 @@ export default function Login(){
 
   const onSubmit = formData => {
     API.post('login', formData).then(res => {
-      console.log(res);
-        localStorage.setItem('token', res.data)
-        localStorage.setItem('user', JSON.stringify(res.data.user))
-        setJwt(true);
+      console.log(res.data.user);
+        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('user', JSON.stringify(res.data.userInfo.userMail))
+        setJwt(res.data.token);
     })
 }
 
@@ -46,8 +46,9 @@ export default function Login(){
                        pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
                    })}/>
               <p  className='form-login-a'>¿Olvidaste tu contraseña?</p>
-            
-              <BtnGlobal2 type="submit" name="Entrar" class="rgb(196 196 196)"/>
+             
+              <BtnGlobal2 type="submit" name="Entrar" class="rgb(196 196 196)" ></BtnGlobal2>
+              
         </form>
        
        <div className='text-bottom'>
