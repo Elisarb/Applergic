@@ -133,11 +133,11 @@ const navigate = useNavigate()
             </div>
 
             <div className='Home-Main-Caja-Abajo'>
-            <a onClick={()=> navigate("/Escaneo")}>
+            <a className='btnHome' onClick={()=> navigate("/Escaneo")}>
             <BtnGlobal name={t('escanear')} image={ImgEscanear} class="rgb(38 199 220)"/>
             </a>
             <p>{t('escanearTexto')}</p>
-            <a onClick={()=> navigate("/Buscar")}>
+            <a className='btnHome' onClick={()=> navigate("/Buscar")}>
             <BtnGlobal name={t('buscar')} image={ImgBuscar} class="rgb(196 196 196)"/>
             </a>
             <p>{t('buscarTexto')}</p>
