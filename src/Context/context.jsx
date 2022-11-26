@@ -7,6 +7,7 @@ const BASEURL ="https://back-end-proyecto.vercel.app";
 export const ApplergicContextProvider =({ children }) => {
 
     const [alergenos, setAlergenos] = useState([]);
+    const [productos, setproductos] = useState([]);
     // const [blogs, setBlogs] = useState([]);
 
     useEffect(()=> {
@@ -16,6 +17,17 @@ export const ApplergicContextProvider =({ children }) => {
 
             setAlergenos(data)
             console.log(data);
+        };
+        getData();
+    
+    },[]);
+    useEffect(()=> {
+
+        const getData = async () => {
+            const {data}= await axios.get(`${BASEURL}/products`);
+
+            setproductos(data)
+            
         };
         getData();
     
@@ -37,7 +49,7 @@ export const ApplergicContextProvider =({ children }) => {
     // },[]);
 
     return (
-        <ApplergicContext.Provider value={{ alergenos }}>
+        <ApplergicContext.Provider value={{ alergenos, productos }}>
       {children}
        </ApplergicContext.Provider>
     )

@@ -1,62 +1,25 @@
 import BtnDiary from "../../Componentes/Shared/Btn-Diary/Btn-Diary"
 import BtnFav from "../../Componentes/Shared/Btn-Fav/Btn-Fav"
 import BtnHome from "../../Componentes/Shared/Btn-Home/Btn-Home"
-import BtnShare from "../../Componentes/Shared/Btn-Share/Btn-Share"
-import { BtnGlobal2 } from "../../Componentes/Shared/BtnGlobal2/BtnGlobal2"
 import Img1 from '../../../Assets/Btn-Diario.png';
 import Img2 from '../../../Assets/Btn-X.png';
 import Img3 from '../../../Assets/Btn-Editar.png'
 import SimpleBarReact from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 import { useNavigate } from "react-router-dom"
+import { ApplergicContext } from "../../../Context/context";
+import { useContext } from 'react';
 
 const DiarioGlobal = () => {
   const navigate = useNavigate()
-  const ProductosPrueba = [
-    {
-    img: Img2,
-    Nombre: "Choco",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    },
-    {
-    img: Img1,
-    Nombre: "bhdkfjksjndfjkljf",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    },
-    {
-    img: Img2,
-    Nombre: "ChocoLatee",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    },
-    {
-    img: Img2,
-    Nombre: "ChocoLatdsadfesdee",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    },
-    {
-    img: Img1,
-    Nombre: "bhdkfjksjndfjkljf",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    },
-    {
-    img: Img2,
-    Nombre: "ChocoLatee",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    },
-    {
-    img: Img2,
-    Nombre: "ChocoLatdsadfesdee",
-    Fecha: "Hoy",
-    Notas: "Producto"
-    }
-
-]
+  let products = [];
+  const { productos } = useContext(ApplergicContext);
+  /*productos.map((item)=>
+    {return(
+        productos.push(item)
+        
+    )})*/
+    console.log(productos)
     return (
       <div className='DiarioLocal-total'>
         
@@ -67,15 +30,15 @@ const DiarioGlobal = () => {
         </div>
 
         <div className='DiarioLocal-Contenido'><SimpleBarReact style={{maxHeight:520}}>
-            {ProductosPrueba.map((Producto, index)=> 
+            {productos.map((Producto, index)=> 
             <div className='DiarioLocal-Producto' key={index}>
 
                 <div className='DiarioLocal-Producto-img-caja'>
-                    <img className='DiarioLocal-Producto-img' src={Producto.img} alt="" />
+                    <img className='DiarioLocal-Producto-img' src={Producto.productImage} alt="" />
                 </div>
                 <div className='DiarioLocal-Producto-datos-caja'>
                     <h1 className='DiarioLocal-Producto-datos-fecha'>{Producto.Fecha}</h1>
-                    <h1 className='DiarioLocal-Producto-datos-nombre'>{Producto.Nombre}</h1>
+                    <h1 className='DiarioLocal-Producto-datos-nombre'>{Producto.productName}</h1>
                     
                     <p className='DiarioLocal-Producto-datos-notas'>{Producto.Notas}</p>
                 </div>
