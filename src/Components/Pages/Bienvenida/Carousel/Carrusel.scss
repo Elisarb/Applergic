@@ -64,14 +64,15 @@
     justify-content: space-between;
     align-items: center;
     width:100%;
+    z-index: 99;
 
-    button{
-        background-color: transparent;
-        border:0px solid black;
+    a{
+        
         padding-left: 20px;
         padding-right: 20px;
         font-size: 12px;
         color:grey;
+        text-decoration: none;
 
     }
     .btnFinBienvenida{

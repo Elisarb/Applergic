@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ApplergicContext } from "../../../Context/context";
 import { useContext } from 'react';
-
+import { API } from "../../Componentes/Shared/services/api";
 
 export default function RegistroAlergias(){
     // let alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Pasta", "Gluten"]
@@ -22,7 +22,7 @@ export default function RegistroAlergias(){
     )})
     console.log(allergens)
 
-    const {handleSubmit} = useForm();
+    const {register, handleSubmit} = useForm();
     const handleChange = (e) => {
     const { value, checked } = e.target;
 
@@ -46,7 +46,6 @@ function OrderAlergenos(){
 }
 
 
-
 function FiltrarAlfabeticamente(array,alfabeto){
     alfabeto.forEach(letra => {
 
@@ -61,9 +60,10 @@ function FiltrarAlfabeticamente(array,alfabeto){
 
 const onSubmit = () => {
     console.log(alergiasSeleccionadas);
+    sessionStorage.setItem("alergiasSelect", alergiasSeleccionadas)
+    window.location.href = "/confirm";
+
 }
-
-
 
     OrderAlergenos()
     console.log(alergenosOrdenados)
@@ -104,10 +104,10 @@ const onSubmit = () => {
                 <div className="cuadroPorLetra">
                     <h1 id={letra[0][0]}>{letra[0][0]}</h1>
                     
-                        {letra.map((ingredientes, index)=>{
+                        {letra.map((ingredientes)=>{
                             return(
                                 <label className="content-input">
-                                <input type="checkbox" value={`${ingredientes}`} onChange={handleChange} />
+                                <input type="checkbox" value={`${ingredientes}`} onChange={handleChange}/>
                                 <i>{ingredientes}</i>
                                 </label>
                             )
@@ -118,6 +118,7 @@ const onSubmit = () => {
                 
         )})}
         <div className="btn-container">
+            
             <BtnGlobal2 type="submit" name="Guardar" class="rgb(38,199,220)"/>
         </div>
         </form>

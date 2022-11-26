@@ -20,6 +20,7 @@ import React, { useState } from 'react';
 import DiarioGlobal from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
 import Escaneo from './Components/Pages/Escaneo/Escaneo';
+import Confirm from './Components/Pages/RegistroAlergias/ConfirmAllergies/Confirm'
 
 import AuthButton from './Components/Componentes/Shared/components/AuthButton/AuthButton';
 
@@ -43,7 +44,7 @@ function App() {
 
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
-  
+          <Route path="/Confirm" element={<Confirm></Confirm>} />  
           <Route path="/Login" element={<Login></Login>} />
           <Route                  
                path="/"
