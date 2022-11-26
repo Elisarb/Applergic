@@ -1,4 +1,8 @@
+
+import React, { useState } from 'react'
+=======
 import React, { useContext } from 'react'
+
 import { useForm } from "react-hook-form";
 import "./Registro.scss"
 import camara from '../../../Assets/camara.png'
@@ -8,6 +12,9 @@ import { Link } from 'react-router-dom';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
+
+import axios from 'axios';
+
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 
 
@@ -23,6 +30,7 @@ export default function Registro(){
        })
    }
 
+  
     return (
 
        <>     
@@ -37,26 +45,23 @@ export default function Registro(){
        <div className='title-1'>
        <h1>{t('quieneres')}</h1>
        </div>
-       
-       <div className='footo'>
-      <div className='footo2'>
-      <img  className='imaaa' src={camara}/>
-      <img  className='imaaaa' src={subirfoto}/>
-      </div>
-      </div>
        </div>
        </div>
 
    
       
         <form  className='form-registro' onSubmit={handleSubmit(onSubmit)}>
+        <div className='footo'>
+        <div className='footo2'>
+      <img  className='imaaa' src={camara}/>
 
-        <input type="file"
-       id="userImage" name="userImage"
-       accept="image/png, image/jpeg"
+        <input type='file'
+       id="userImage" name="file" placeholder='Subir Foto'
+       
        {...register("userImage", { required: true ,        
        })}/>
-       <label for="userImage">Choose a profile picture:</label>
+       </div>
+       </div>
 
             <input id="userName" placeholder={t('name')}
                    {...register("userName", { required: true })}/>
