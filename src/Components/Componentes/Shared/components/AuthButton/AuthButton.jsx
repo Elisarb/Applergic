@@ -13,11 +13,12 @@ export default function AuthButton () {
         localStorage.removeItem('user');
         setJwt(null);
         navigate("/");
+        
     }
-
+console.log(user)
     return jwt && user ? (
         <p>
-            Welcome! {user.name}
+            
             <button
                 onClick={signOut}
             >

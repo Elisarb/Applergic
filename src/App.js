@@ -38,7 +38,7 @@ function App() {
     
       
 
-    <Router><AuthButton/>
+    <Router>
       <ApplergicContextProvider>  
         <Routes>    
         
