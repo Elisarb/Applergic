@@ -1,4 +1,8 @@
+
 import React, { useState } from 'react'
+=======
+import React, { useContext } from 'react'
+
 import { useForm } from "react-hook-form";
 import "./Registro.scss"
 import camara from '../../../Assets/camara.png'
@@ -8,9 +12,16 @@ import { Link } from 'react-router-dom';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
+
 import axios from 'axios';
 
+import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
+
+
 export default function Registro(){
+  const {t} = useContext(MyContext)
+
+
   const {register, handleSubmit} =useForm();
 
   const onSubmit = formData => {
@@ -28,11 +39,11 @@ export default function Registro(){
        <Link to="/login">
             <VolverGlobal/>
        </Link>
-       <p>1 de 4</p>
+       <p>1 {t('de')} 4</p>
        </div>
        <div className='top-top-3'>
        <div className='title-1'>
-       <h1>Dinos quien eres</h1>
+       <h1>{t('quieneres')}</h1>
        </div>
        </div>
        </div>
@@ -52,24 +63,30 @@ export default function Registro(){
        </div>
        </div>
 
-            <input id="userName" placeholder='Name'
+            <input id="userName" placeholder={t('name')}
                    {...register("userName", { required: true })}/>
 
         
-            <input id="userMail" placeholder='Email'
+            <input id="userMail" placeholder={t('email')}
                    {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
-            <input id="userPhone" placeholder='Movil'
+            <input id="userPhone" placeholder={t('movil')}
                    {...register("userPhone", { required: true ,
-                   })}/>         
+                   })}/>    
+              
+              <input id="userImage" placeholder={t('img')}  defaultValue="a1233"
+                   {...register("userImage", { required: true ,
+                 
+                   })}/>    
+        
 
-            <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABCedf123"
+            <input name="password" id="password" type="password" placeholder={t('password')} defaultValue="ABCedf123"
                    {...register("password", {
                        required: true,
                        pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
                    })}/>
 
-              <BtnGlobal2 type="submit" name="Guardar Perfil" class="rgb(196 196 196)"/>
+              <BtnGlobal2 type="submit" name={t('guardarPerfil')} class="rgb(196 196 196)"/>
             
         </form>
         </>

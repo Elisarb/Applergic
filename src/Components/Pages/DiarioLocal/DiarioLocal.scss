@@ -60,14 +60,21 @@
 .DiarioLocal-Producto-img-caja{
     height: 100%;
     width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .DiarioLocal-Producto-img{
-    height: 75%;
-    width: 75%;
+    border: 6px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 70%;
+    width: 70%;
 }
 
 .DiarioLocal-Producto-datos-caja{
     width: 50%;
+    height: 70%;
 }
 
 .DiarioLocal-Producto-datos-nombre{
@@ -76,6 +83,10 @@
 }
 
 .DiarioLocal-Producto-datos-fecha{
+    font-size: 12px;
+    font-family: Montserrat-Medium;
+}
+.DiarioLocal-Producto-datos-notas{
     font-size: 12px;
     font-family: Montserrat-Medium;
 }

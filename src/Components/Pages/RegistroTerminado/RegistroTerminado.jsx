@@ -5,8 +5,12 @@ import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import "./RegistroTerminado.scss"
 import good from '../../../Assets/good.png'
 import x from '../../../Assets/x.png'
+import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
+import { useContext } from 'react';
 export default function RegistroTerminado(){
- 
+  
+  const {t} = useContext(MyContext)
+
 
     return (
 
@@ -16,16 +20,16 @@ export default function RegistroTerminado(){
       <Link to="/Emergencias">
             <VolverGlobal/>
        </Link>
-      <p>4 de 4</p>
+      <p>4 {t('de')} 4</p>
       <img  className='x-img' src={x}/>
       </div>
       </div>
       <div className='allgood'>
       <img  className='good-img' src={good}/>
-      <h1>Hemos terminado, ya puedes escanear tu primer producto.</h1>
+      <h1>{t('terminado')}</h1>
       </div>
         <div className='qq'> 
-        <BtnGlobal2 type="submit" name="Escanea un Producto" class="rgb(38 199 220)"/>
+        <BtnGlobal2 type="submit" name={t('escaneaproduct')} class="rgb(38 199 220)"/>
         </div>
         </>
        

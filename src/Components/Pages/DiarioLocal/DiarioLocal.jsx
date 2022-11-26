@@ -9,6 +9,8 @@ import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { useNavigate } from 'react-router-dom';
 
 const DiarioLocal = () => {
+    
+    
     const navigate = useNavigate()
     const ProductosPrueba = [
         {

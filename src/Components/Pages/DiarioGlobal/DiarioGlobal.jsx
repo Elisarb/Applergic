@@ -9,8 +9,9 @@ import 'simplebar-react/dist/simplebar.min.css';
 import { useNavigate } from "react-router-dom"
 import { ApplergicContext } from "../../../Context/context";
 import { useContext } from 'react';
-
+import { MyContext } from "../../Componentes/Shared/contexts/MyContext";
 const DiarioGlobal = () => {
+    const {t} = useContext(MyContext)
   const navigate = useNavigate()
   let products = [];
   const { productos } = useContext(ApplergicContext);
@@ -25,7 +26,7 @@ const DiarioGlobal = () => {
         
 
         <div className='DiarioLocal-Titulo'>
-            <div className='DiarioLocal-Titulo-1'><h1>TU DIARIO DE PRODUCTOS</h1></div>
+            <div className='DiarioLocal-Titulo-1'><h1>{t('diarioH1')}</h1></div>
             
         </div>
 
@@ -37,10 +38,10 @@ const DiarioGlobal = () => {
                     <img className='DiarioLocal-Producto-img' src={Producto.productImage} alt="" />
                 </div>
                 <div className='DiarioLocal-Producto-datos-caja'>
-                    <h1 className='DiarioLocal-Producto-datos-fecha'>{Producto.Fecha}</h1>
+                    <h1 className='DiarioLocal-Producto-datos-fecha'>{Producto.createdAt}</h1>
                     <h1 className='DiarioLocal-Producto-datos-nombre'>{Producto.productName}</h1>
-                    
-                    <p className='DiarioLocal-Producto-datos-notas'>{Producto.Notas}</p>
+                    <SimpleBarReact style={{maxHeight:50}}>
+                    <p className='DiarioLocal-Producto-datos-notas'>{Producto.ingredients}</p></SimpleBarReact>
                 </div>
                 <div className='DiarioLocal-Producto-btns-caja'>
                     <div className='DiarioLocal-Producto-btn'>
