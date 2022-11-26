@@ -1,8 +1,5 @@
 
-import React, { useState } from 'react'
-=======
-import React, { useContext } from 'react'
-
+import React, {useContext, useState } from 'react'
 import { useForm } from "react-hook-form";
 import "./Registro.scss"
 import camara from '../../../Assets/camara.png'
