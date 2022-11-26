@@ -79,14 +79,14 @@ const navigate = useNavigate()
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/DiarioGlobal")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgDiario} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>{t('salir')}Diario</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('diario')}</h1>
                 </div>
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={handleClick2}>
                     <img className='Hamburguesa-Opcion-img' src={ImgCompartir} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('compartir')}</h1>
                 </div>
-                <div className='Hamburguesa-Opcion-Caja' onClick={()=> Traducir()}>
+                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/Traductor")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgTraductor} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('traductor')}</h1>
                 </div>
