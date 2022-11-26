@@ -41,7 +41,7 @@ function App() {
     <Router><AuthButton/>
       <ApplergicContextProvider>  
         <Routes>    
-
+        
           <Route path="/Bienvenida" element={<Bienvenida></Bienvenida>} />
           <Route path="/" element={<Portada></Portada>} />
           <Route path="/Confirm" element={<Confirm></Confirm>} />  

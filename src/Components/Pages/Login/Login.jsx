@@ -16,10 +16,13 @@ export default function Login(){
 
   const onSubmit = formData => {
     API.post('login', formData).then(res => {
-      console.log(res.data.user);
+      console.log(res.data.userInfo);
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('user', JSON.stringify(res.data.userInfo.userMail))
         setJwt(res.data.token);
+        setTimeout(function(){ 
+          window.location.href = "/Home";
+        },1);
     })
 }
 
