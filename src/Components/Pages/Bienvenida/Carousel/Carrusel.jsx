@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './../Carousel/Carrusel.scss'
 import car1 from "../../../../Assets/Carrusel-1.png";
 import car2 from "../../../../Assets/Carrusel-2.png";
 import car3 from "../../../../Assets/Carrusel-3.png";
 import car4 from "../../../../Assets/Carrusel-4.png";
+import { MyContext } from '../../../Componentes/Shared/contexts/MyContext';
+import { Link } from 'react-router-dom';
 
 function ControlledCarousel() {
-  const [index, setIndex] = useState(0);
+  const {t} = useContext(MyContext)
 
+  const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
     // console.log(activeIndex)
@@ -38,8 +41,8 @@ function ControlledCarousel() {
         </div>
 
         <Carousel.Caption>
-          <h3> ¡Bienvenido a Applergic!</h3>
-          <h4>Escanea el código de barras de tu producto y Applergic te dirá si es apto para ti.</h4>
+          <h3>{t('bienvenido')}</h3>
+          <h4>{t('escaneacarrusel')}</h4>
         </Carousel.Caption>
         
       </Carousel.Item>
@@ -52,7 +55,7 @@ function ControlledCarousel() {
         />
         </div>
         <Carousel.Caption>
-          <h3>Lleva tu diario de compras y actividades</h3>
+          <h3>{t('diariocarrusel')}</h3>
         </Carousel.Caption>
         
     
@@ -66,7 +69,7 @@ function ControlledCarousel() {
         />
         </div>
         <Carousel.Caption>
-          <h3>En caso de emergencia, nos pondremos en contacto con la persona que nos digas</h3>
+          <h3>{t('soscarrusel')}</h3>
         </Carousel.Caption>
         
       </Carousel.Item>
@@ -79,7 +82,7 @@ function ControlledCarousel() {
         />
         </div>
         <Carousel.Caption>
-          <h3>Viaja a donde quieras. Tendrás a tu disposición un traductor off-line y tu informe de alergia e intolerancias traducido al idioma local.</h3>
+          <h3>{t('banderascarrusel')}</h3>
 
         </Carousel.Caption>
         
@@ -89,6 +92,10 @@ function ControlledCarousel() {
      
     </Carousel>
       <div className="btnsSiguiente">
+          <Link className="btnFinBienvenida1" to="/login">{t('saltar')}</Link>
+          {/* <a href=" ">{t('saltar')}</a> */}
+          <Link className="btnFinBienvenida" to="/login">{t('siguiente')}</Link>
+          {/* <a className="btnFinBienvenida" href="/login">{t('siguiente')}</a> */}
           <a href="/login ">Saltar</a>
           <a className="btnFinBienvenida" href="/login">Siguiente</a>
       </div>

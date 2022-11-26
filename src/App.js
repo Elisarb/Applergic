@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Link, Route, Routes, BrowserRouter as Router, Navigate } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router, Navigate } from "react-router-dom";
 import Bienvenida from './Components/Pages/Bienvenida/Bienvenida';
 import Portada from './Components/Pages/Portada/Portada';
 import Registro from './Components/Pages/Registro/Registro';
@@ -11,7 +11,6 @@ import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
 import Fav from './Components/Pages/Favoritos/Favoritos';
 
-import Diario from './Components/Pages/DiarioGlobal/DiarioGlobal';
 import RegistroTerminado from './Components/Pages/RegistroTerminado/RegistroTerminado';
 
 import Buscar from './Components/Pages/Buscar/Buscar';
@@ -24,19 +23,28 @@ import Confirm from './Components/Pages/RegistroAlergias/ConfirmAllergies/Confir
 
 import AuthButton from './Components/Componentes/Shared/components/AuthButton/AuthButton';
 
-import { ApplergicContextProvider } from '../src/Context/context';
+import {ApplergicContextProvider } from './Context/context';
 
 
 import { JwtContext } from './Components/Componentes/Shared/contexts/JwtContext'
 import RequireAuth from './Components/Componentes/Shared/components/RequireAuth/RequireAuth';
+import Valoraciones from './Components/Pages/Valoraciones/Valoraciones';
+import Traductor from './Components/Pages/Traductor/Traductor';
+import { useTranslation } from 'react-i18next';
+import { MyContext } from './Components/Componentes/Shared/contexts/MyContext';
+
 
 function App() {
+  const {t,i18n} = useTranslation(['translation'])
+  const changeLanguaje = (code) => {
+    i18n.changeLanguage(code)
+  }
   const [jwt, setJwt] = useState(localStorage.getItem('token') || null);
   return (
 
     <JwtContext.Provider value={{ jwt, setJwt }}>
     
-      
+    <MyContext.Provider value={{t, changeLanguaje}}> 
 
     <Router>
       <ApplergicContextProvider>  
@@ -62,10 +70,14 @@ function App() {
           <Route path="/Buscar" element={<Buscar></Buscar>} />
 
           <Route path="/Buscar" element={<Buscar></Buscar>} />  
+          <Route path="/Valoraciones" element={<Valoraciones></Valoraciones>} />
+          <Route path="/Traductor" element={<Traductor></Traductor>} />
 
         </Routes>
         </ApplergicContextProvider> 
     </Router>
+    </MyContext.Provider>  
+
 </JwtContext.Provider>
 
     )

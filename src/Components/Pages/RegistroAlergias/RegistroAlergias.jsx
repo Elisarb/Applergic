@@ -4,9 +4,13 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ApplergicContext } from "../../../Context/context";
 import { useContext } from 'react';
+import { MyContext } from "../../Componentes/Shared/contexts/MyContext";
+
 import { API } from "../../Componentes/Shared/services/api";
 
 export default function RegistroAlergias(){
+    const {t} = useContext(MyContext)
+
     // let alergenos = ["Nueces", "Manzanas", "Chocolate", "Plátano", "Leche", "Cambur", "Pasta", "Gluten"]
     let alergenosOrdenados= [];
     const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -75,11 +79,11 @@ const onSubmit = () => {
       <div className='alergias'>
         <div className='centrado'>
             <div className='arribaa'>
-                    <p>1 de 4</p>
+                    <p>3 {t('de')} 4</p>
 
             </div>
-      <h1>Ahora selecciona tus alergias e intolerancias</h1>
-      <p>Los elementos marcados serán identificados en tu búsqueda como peligrosos para ti.</p>
+      <h1>{t('selecciona')}</h1>
+      <p>{t('elementos')}</p>
            
             <div className="cuadro">
             {
