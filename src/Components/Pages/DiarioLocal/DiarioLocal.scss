@@ -58,9 +58,13 @@
     align-items: center;
 }
 .DiarioLocal-Producto-img-caja{
+    height: 100%;
     width: 35%;
 }
-.DiarioLocal-Producto-img{}
+.DiarioLocal-Producto-img{
+    height: 75%;
+    width: 75%;
+}
 
 .DiarioLocal-Producto-datos-caja{
     width: 50%;

@@ -20,6 +20,7 @@ import './Home.scss'
 import { BtnGlobal } from '../../Componentes/Shared/BtnGlobal/BtnGlobal'
 import { Link, useNavigate } from 'react-router-dom'
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext'
+import AuthButton from '../../Componentes/Shared/components/AuthButton/AuthButton'
 
 
 const Home = () => {
@@ -96,6 +97,7 @@ const navigate = useNavigate()
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> Salir()}>
                     <img className='Hamburguesa-Opcion-img' src="" alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('salir')}</h1>
+                    <AuthButton/>
                 </div>
             </div>
         </div>

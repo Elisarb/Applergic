@@ -96,6 +96,8 @@ function ControlledCarousel() {
           {/* <a href=" ">{t('saltar')}</a> */}
           <Link className="btnFinBienvenida" to="/login">{t('siguiente')}</Link>
           {/* <a className="btnFinBienvenida" href="/login">{t('siguiente')}</a> */}
+          <a href="/login ">Saltar</a>
+          <a className="btnFinBienvenida" href="/login">Siguiente</a>
       </div>
     </div>
     

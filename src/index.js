@@ -10,7 +10,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Components/Componentes/Shared/lang/i18n'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+ 
     <App />
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

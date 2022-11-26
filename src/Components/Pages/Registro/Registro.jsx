@@ -49,7 +49,14 @@ export default function Registro(){
 
    
       
-        <form  className='foorm' onSubmit={handleSubmit(onSubmit)}>
+        <form  className='form-registro' onSubmit={handleSubmit(onSubmit)}>
+
+        <input type="file"
+       id="userImage" name="userImage"
+       accept="image/png, image/jpeg"
+       {...register("userImage", { required: true ,        
+       })}/>
+       <label for="userImage">Choose a profile picture:</label>
 
             <input id="userName" placeholder={t('name')}
                    {...register("userName", { required: true })}/>
@@ -66,6 +73,8 @@ export default function Registro(){
                    {...register("userImage", { required: true ,
                  
                    })}/>    
+
+                   })}/>         
 
             <input name="password" id="password" type="password" placeholder={t('password')} defaultValue="ABCedf123"
                    {...register("password", {

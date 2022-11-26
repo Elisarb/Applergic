@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 import "./Login.scss"
 import comidas from '../../../Assets/Comidass.png'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
 import { API } from "../../Componentes/Shared/services/api";
@@ -19,10 +19,14 @@ export default function Login(){
   const onSubmit = formData => {
 
     API.post('login', formData).then(res => {
-      console.log(res);
-        localStorage.setItem('token', res.data)
-        localStorage.setItem('user', JSON.stringify(res.data.user))
-        setJwt(true);
+       
+        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('user', JSON.stringify(res.data.userInfo.userMail))
+        setJwt(res.data.token);
+        setTimeout(function(){ 
+          window.location.href = "/Home";
+        },1);
+        console.log(res.data.userInfo);
     })
 }
 
@@ -40,10 +44,10 @@ export default function Login(){
       
         <form  className='form-login' onSubmit={handleSubmit(onSubmit)}>
         
-        <input id="userMail" placeholder='Email'
+        <input id="userMail" placeholder='Email'  defaultValue="matt12@gmail.com"
                    {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
-      <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABCedf123"
+      <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABC123abc/"
                    {...register("password", {
                        required: true,
                        pattern: /[A-Za-z\d$@$!%*?&]{8,15}/
@@ -51,6 +55,8 @@ export default function Login(){
               <p  className='form-login-a'>{t('olvido')}</p>
             
               <BtnGlobal2 type="submit" name={t('entrar')} class="rgb(196 196 196)"/>
+
+
         </form>
        
        <div className='text-bottom'>
