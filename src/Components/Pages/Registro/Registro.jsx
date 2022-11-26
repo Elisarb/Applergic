@@ -73,8 +73,7 @@ export default function Registro(){
                    {...register("userImage", { required: true ,
                  
                    })}/>    
-
-                   })}/>         
+        
 
             <input name="password" id="password" type="password" placeholder={t('password')} defaultValue="ABCedf123"
                    {...register("password", {
