@@ -37,10 +37,10 @@ const DiarioGlobal = () => {
                     <img className='DiarioLocal-Producto-img' src={Producto.productImage} alt="" />
                 </div>
                 <div className='DiarioLocal-Producto-datos-caja'>
-                    <h1 className='DiarioLocal-Producto-datos-fecha'>{Producto.Fecha}</h1>
+                    <h1 className='DiarioLocal-Producto-datos-fecha'>{Producto.createdAt}</h1>
                     <h1 className='DiarioLocal-Producto-datos-nombre'>{Producto.productName}</h1>
-                    
-                    <p className='DiarioLocal-Producto-datos-notas'>{Producto.Notas}</p>
+                    <SimpleBarReact style={{maxHeight:50}}>
+                    <p className='DiarioLocal-Producto-datos-notas'>{Producto.ingredients}</p></SimpleBarReact>
                 </div>
                 <div className='DiarioLocal-Producto-btns-caja'>
                     <div className='DiarioLocal-Producto-btn'>
