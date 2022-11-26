@@ -9,8 +9,9 @@ import 'simplebar-react/dist/simplebar.min.css';
 import { useNavigate } from "react-router-dom"
 import { ApplergicContext } from "../../../Context/context";
 import { useContext } from 'react';
-
+import { MyContext } from "../../Componentes/Shared/contexts/MyContext";
 const DiarioGlobal = () => {
+    const {t} = useContext(MyContext)
   const navigate = useNavigate()
   let products = [];
   const { productos } = useContext(ApplergicContext);
@@ -25,7 +26,7 @@ const DiarioGlobal = () => {
         
 
         <div className='DiarioLocal-Titulo'>
-            <div className='DiarioLocal-Titulo-1'><h1>TU DIARIO DE PRODUCTOS</h1></div>
+            <div className='DiarioLocal-Titulo-1'><h1>{t('diarioH1')}</h1></div>
             
         </div>
 
