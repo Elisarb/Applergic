@@ -9,22 +9,19 @@ import { API } from "../../Componentes/Shared/services/api";
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 
 
-export default function Registro(){
-  const {t} = useContext(MyContext)
 
 
-  const {register, handleSubmit,getValues} =useForm();
-console.log(getValues());
-  const onSubmit = formData => {
-   
-    
-    const {userImage, ...rest } = formData
-    console.log("aa", rest);
-    console.log('objectkeys', Object.keys(userImage));
-       API.post('register', formData).then(res => {
-           console.log('Register user')
-       })
-   }
+  export default function Registro(){
+    const {t} = useContext(MyContext)
+  
+  
+    const {register, handleSubmit} =useForm();
+  
+    const onSubmit = formData => {
+         API.post('register', formData).then(res => {
+             console.log('Register user',);
+         })
+     }
 
   
     return (
@@ -48,7 +45,7 @@ console.log(getValues());
             <div className='div-top-form'>
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
-                        <input type="file" multiple id="userImage" name="file" placeholder='Subir Foto'
+                        <input  multiple id="userImage" name="file" placeholder='Subir Foto'
                         {...register("userImage", { required: true ,  })}/>
                 </div>
             </div>

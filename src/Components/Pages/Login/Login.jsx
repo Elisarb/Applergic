@@ -22,7 +22,7 @@ const handleChangeInput=e=>{
   }
   setInputSelected(auxiliar);
 
-  if(auxiliar.length>1){
+  if(auxiliar.length>0){
     setBotonActivo(true);
    } else{
     setBotonActivo(false);
@@ -64,15 +64,15 @@ const handleChangeInput=e=>{
       </div>
       
      <form  className='form-login' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>       
-         <input id="userMail" placeholder='Email'  defaultValue="matt12@gmail.com"
+         <input id="userMail" placeholder='Email'  defaultValue=""
            {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
 
-         <input name="password" id="password" type="password" placeholder='Password' defaultValue="ABC123abc/"
+         <input name="password" id="password" type="password" placeholder='Password' defaultValue=""
          {...register("password", { required: true, pattern: /[A-Za-z\d$@$!%*?&]{8,15}/ })}/>
 
         <p  className='form-login-p'>{t('olvido')}</p>
               
-              <button className='btn btn-primary' disabled={!botonActivo}>Entrar</button>
+              <button className='boton-login' disabled={!botonActivo}>Entrar</button>
               
   </form>
        
