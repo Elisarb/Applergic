@@ -13,6 +13,9 @@ export default function RegistroSos(){
  
   const onSubmit = (data) => {
   console.log(data);
+  setTimeout(function(){ 
+    window.location.href = "/RegistroAlergias";
+  },1);
 }
 
     return (
@@ -49,7 +52,7 @@ export default function RegistroSos(){
                    {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}/>
 
               <input id="movil" placeholder='Movil'
-                   {...register("movil", { required: true ,
+                   {...register("movil", { required: false ,
                    pattern: /^(\+34|0034|34)?[67]\d{8}$/
                    })}/>    
    
