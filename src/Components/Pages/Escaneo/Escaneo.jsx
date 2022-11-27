@@ -1,7 +1,7 @@
 const Escaneo = () => {
     return (
       <div>
-        <h1>ESCANEAR</h1>
+        <h1>ESCANEAR.</h1>
         
       </div>
     )

@@ -8,6 +8,7 @@ export const ApplergicContextProvider =({ children }) => {
 
     const [alergenos, setAlergenos] = useState([]);
     const [productos, setproductos] = useState([]);
+    const [usuario, setusuario] = useState([]);
     // const [blogs, setBlogs] = useState([]);
 
     useEffect(()=> {
@@ -32,6 +33,18 @@ export const ApplergicContextProvider =({ children }) => {
         getData();
     
     },[]);
+    const user = JSON.parse(localStorage.getItem('user'));
+    useEffect(()=> {
+
+        const getData = async () => {
+            const {data}= await axios.get(`${BASEURL}/users/${user}`);
+
+            setusuario(data)
+            
+        };
+        getData();
+    
+    },[]);
 
 
     // useEffect(()=> {
@@ -49,7 +62,7 @@ export const ApplergicContextProvider =({ children }) => {
     // },[]);
 
     return (
-        <ApplergicContext.Provider value={{ alergenos, productos }}>
+        <ApplergicContext.Provider value={{ alergenos, productos, usuario }}>
       {children}
        </ApplergicContext.Provider>
     )

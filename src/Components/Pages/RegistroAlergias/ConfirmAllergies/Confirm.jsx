@@ -1,15 +1,19 @@
 import "../ConfirmAllergies/Confirm.scss";
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+import React, { useContext } from 'react'
+import { ApplergicContext } from "../../../../Context/context";
 import { BtnGlobal2 } from "../../../Componentes/Shared/BtnGlobal2/BtnGlobal2";
 import { useForm } from "react-hook-form";
 import { API } from "../../../../Components/Componentes/Shared/services/api";
 // import Axios from "Axios";
 
 export default function Confirm(){
+    const { usuario } = useContext(ApplergicContext);
+    const info = usuario._id;
     // console.log(alergiasSeleccionadas)
     let alergiasSelect = sessionStorage.getItem("alergiasSelect")
     let alergiasConfirm = alergiasSelect.split(",");
-
+    console.log(alergiasConfirm)
     const {register,handleSubmit} = useForm();
 
     // function agregar(){
@@ -17,32 +21,12 @@ export default function Confirm(){
     //     console.log("clickeado");
     // }
 
-    // const onSubmit = () => {
-    //     useEffect(() => {
 
-    //         const fetchData = async (id, allergens) => {
-    //             try {
-    //                 const {data} = await API.put(
-    //                     `https://back-end-proyecto.vercel.app/users/${id}`,
-    //                     {
-    //                         id,
-    //                         allergens
-    //                     }
-    //                 );
-    //                 console.log(data);
-    //             }catch (error){
-    //                 console.log(error)
-    //             }
-    //         };
-    
-    //         fetchData(
-    //             {},
-    //             {alergiasConfirm}
-    //         )
-    //     })
-    // }
-
-    
+    const onSubmit = () =>{
+        API.put(`${info}`, alergiasConfirm).then(res => {
+            console.log('Registered')
+            })
+    }
 
 
     const handleChange = (e) => {

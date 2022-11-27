@@ -21,7 +21,8 @@ export default function Login(){
     API.post('login', formData).then(res => {
        
         localStorage.setItem('token', res.data.token)
-        localStorage.setItem('user', JSON.stringify(res.data.userInfo.userMail))
+        localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
+        
         setJwt(res.data.token);
         setTimeout(function(){ 
           window.location.href = "/Home";

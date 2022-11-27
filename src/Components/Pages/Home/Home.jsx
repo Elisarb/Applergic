@@ -79,14 +79,14 @@ const navigate = useNavigate()
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/DiarioGlobal")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgDiario} alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>{t('salir')}Diario</h1>
+                    <h1 className='Hamburguesa-Opcion-txt'>{t('diario')}</h1>
                 </div>
                 
                 <div className='Hamburguesa-Opcion-Caja' onClick={handleClick2}>
                     <img className='Hamburguesa-Opcion-img' src={ImgCompartir} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('compartir')}</h1>
                 </div>
-                <div className='Hamburguesa-Opcion-Caja' onClick={()=> Traducir()}>
+                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/Traductor")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgTraductor} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('traductor')}</h1>
                 </div>
@@ -133,9 +133,13 @@ const navigate = useNavigate()
             </div>
 
             <div className='Home-Main-Caja-Abajo'>
+            <a className='btnHome' onClick={()=> navigate("/Escaneo")}>
             <BtnGlobal name={t('escanear')} image={ImgEscanear} class="rgb(38 199 220)"/>
+            </a>
             <p>{t('escanearTexto')}</p>
+            <a className='btnHome' onClick={()=> navigate("/Buscar")}>
             <BtnGlobal name={t('buscar')} image={ImgBuscar} class="rgb(196 196 196)"/>
+            </a>
             <p>{t('buscarTexto')}</p>
             <BtnGlobal name={t('btnSOS')} image={ImgSOS} class="rgb(248 73 113)"/>
             <p>{t('sos')}</p>
