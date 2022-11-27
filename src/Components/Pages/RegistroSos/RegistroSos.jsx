@@ -15,9 +15,14 @@ export default function RegistroSos(){
  
   const onSubmit = (data) => {
   console.log(data);
+
   setJwt(data.token);
   setTimeout(function(){ 
     window.location.href = "/login";
+
+  setTimeout(function(){ 
+    window.location.href = "/RegistroAlergias";
+
   },1);
 }
 
@@ -55,6 +60,12 @@ export default function RegistroSos(){
 
               <input id="contacPhone" placeholder='Movil'
                    {...register("contacPhone", { required: true })}/>    
+
+              <input id="movil" placeholder='Movil'
+                   {...register("movil", { required: false ,
+                   pattern: /^(\+34|0034|34)?[67]\d{8}$/
+                   })}/>    
+
    
 
             <input name="secureName" id="poliza"  placeholder='Compañia de Seguros/Nº Poliza'
