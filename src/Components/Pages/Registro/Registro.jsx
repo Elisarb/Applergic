@@ -14,12 +14,14 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
   export default function Registro(){
     const {t} = useContext(MyContext)
 
+
+    const {register, handleSubmit} =useForm();
+
     const onSubmit = formData => {
          API.post('register', formData).then(res => {
              console.log('Register user',);
          })
      }
-
   
     return (
 
