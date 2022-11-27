@@ -32,6 +32,7 @@ import Valoraciones from './Components/Pages/Valoraciones/Valoraciones';
 import Traductor from './Components/Pages/Traductor/Traductor';
 import { useTranslation } from 'react-i18next';
 import { MyContext } from './Components/Componentes/Shared/contexts/MyContext';
+import PerfilUsuario from './Components/Pages/PerfilUsuario/PerfilUsuario';
 
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
           <Route path="/Buscar" element={<Buscar></Buscar>} />  
           <Route path="/Valoraciones" element={<Valoraciones></Valoraciones>} />
           <Route path="/Traductor" element={<Traductor></Traductor>} />
+          <Route path="/PerfilUsuario" element={<PerfilUsuario></PerfilUsuario>} />
 
         </Routes>
         </ApplergicContextProvider> 

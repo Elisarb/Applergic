@@ -1,0 +1,70 @@
+.PerfilUsuario-total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PerfilUsuario-Caja-img{
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.PerfilUsuario-img{
+    border: 1px solid red;
+    width: 90%;
+    height: 90%;
+}
+
+.PerfilUsuario-Caja-Info{
+    width: 87%;
+    margin-top: 50px;
+}
+
+.PerfilUsuario-Caja-Info-nombre{
+
+    
+}
+.PerfilUsuario-nombre-titulo{
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 150px;
+    margin: 0px;
+    border-bottom: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0px;
+    text-align: center;
+}
+.PerfilUsuario-nombre{
+    border: 5px solid black;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    
+}
+
+.PerfilUsuario-Caja-Info-email{
+    
+}
+
+.PerfilUsuario-email-titulo{
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 150px;
+    margin: 0px;
+    border-bottom: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0px;
+    text-align: center;
+}
+
+.PerfilUsuario-email{
+    border: 5px solid black;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+}
