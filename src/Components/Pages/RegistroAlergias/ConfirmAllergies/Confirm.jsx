@@ -1,8 +1,9 @@
 import "../ConfirmAllergies/Confirm.scss";
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BtnGlobal2 } from "../../../Componentes/Shared/BtnGlobal2/BtnGlobal2";
 import { useForm } from "react-hook-form";
 import { API } from "../../../../Components/Componentes/Shared/services/api";
+// import Axios from "Axios";
 
 export default function Confirm(){
     // console.log(alergiasSeleccionadas)
@@ -11,16 +12,38 @@ export default function Confirm(){
 
     const {register,handleSubmit} = useForm();
 
-    function agregar(){
-        // window.location.href = "/RegistroAlergias";
-        console.log("clickeado");
-    }
+    // function agregar(){
+    //     // window.location.href = "/RegistroAlergias";
+    //     console.log("clickeado");
+    // }
 
-    const onSubmit = formData =>{
-        API.post('register', formData).then(res => {
-            console.log('Registered')
-            })
-    }
+    // const onSubmit = () => {
+    //     useEffect(() => {
+
+    //         const fetchData = async (id, allergens) => {
+    //             try {
+    //                 const {data} = await API.put(
+    //                     `https://back-end-proyecto.vercel.app/users/${id}`,
+    //                     {
+    //                         id,
+    //                         allergens
+    //                     }
+    //                 );
+    //                 console.log(data);
+    //             }catch (error){
+    //                 console.log(error)
+    //             }
+    //         };
+    
+    //         fetchData(
+    //             {},
+    //             {alergiasConfirm}
+    //         )
+    //     })
+    // }
+
+    
+
 
     const handleChange = (e) => {
         const { value, checked } = e.target;
@@ -44,7 +67,8 @@ export default function Confirm(){
             <div>
             <p className="p-marcar">Marca para deseleccionar o añadir uno nuevo</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+            <form>
             {alergiasConfirm.map((item)=>{
                 return(
                     <label className="content-input">
@@ -60,7 +84,10 @@ export default function Confirm(){
                  Añadir nuevos
                 </a>
             </div>
-            <BtnGlobal2 type="submit" name="Confirmar alergias" class="rgb(196 196 196)"/>
+
+            <div>
+                <BtnGlobal2 type="submit" name="Confirmar alergias" class="rgb(196 196 196)"/>
+            </div>
             </form>
             </div>
         </div>
