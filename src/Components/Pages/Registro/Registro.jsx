@@ -16,7 +16,7 @@ export default function Registro(){
   const {register, handleSubmit,getValues} =useForm();
 console.log(getValues());
   const onSubmit = formData => {
-    console.log("q", formData);
+   
     
     const {userImage, ...rest } = formData
     console.log("aa", rest);
