@@ -52,7 +52,7 @@ export default function Confirm(){
             <p className="p-marcar">Marca para deseleccionar o añadir uno nuevo</p>
             </div>
             {/* <form onSubmit={handleSubmit(onSubmit)}> */}
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
             {alergiasConfirm.map((item)=>{
                 return(
                     <label className="content-input">
