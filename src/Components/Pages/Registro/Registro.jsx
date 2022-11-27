@@ -14,9 +14,6 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
   export default function Registro(){
     const {t} = useContext(MyContext)
 
-
-    const {register, handleSubmit} =useForm();
-
     const onSubmit = formData => {
          API.post('register', formData).then(res => {
              console.log('Register user',);
@@ -45,8 +42,10 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
             <div className='div-top-form'>
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
-                        <input   id="userImage" name="file" placeholder='Subir Foto'
-                        {...register("userImage", { required: false ,  })}/>
+
+                        <input  multiple id="userImage" name="file" placeholder='Subir Foto'
+                        {...register("userImage", { required: true ,  })}/>
+
                 </div>
             </div>
                     <input id="userName" placeholder={t('name')}
