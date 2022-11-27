@@ -22,7 +22,7 @@ const handleChangeInput=e=>{
   }
   setInputSelected(auxiliar);
 
-  if(auxiliar.length>2){
+  if(auxiliar.length>1){
     setBotonActivo(true);
    } else{
     setBotonActivo(false);
