@@ -1,4 +1,4 @@
-.arribaas {
+.top-sos {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     margin-top: 34px;
-
     justify-content: flex-start;
     p{
        text-align: center;   
@@ -23,70 +22,6 @@
     flex-direction: column;
     align-items: center
 }
-.foorm{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-        input{
-            background-color: transparent !important;
-            // margin-top: 20px;
-            // margin-bottom: 20px;
-            border: none;
-            border-bottom: 2px solid rgb(216, 213, 213);
-            width: 75%;
-            font-size: 14px;
-            height: 66px;
-        
-        }
-        button{
-            font-size: 17px;
-            width: 80%;
-        }
-}
-.footo{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: 111px;
-    width: 111px;
-    border-radius:100px;
-    border: solid rgb(0, 213, 255);
-}
-.footo2{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-
-
-    height: 80px;
-    .imaaa{
-    
-        height: 80%;
-    }
-    .imaaaa{
-        width: 50px;
-        height:18px
-    }
-}
-
-.qq{
-    color:  rgb(0, 213, 255);
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
 .title-1{
     display: flex;
     justify-content: center;
@@ -101,3 +36,32 @@
     text-align: center;
   
 }
+.form-sos{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+        input{
+            background-color: transparent !important;
+            border: none;
+            border-bottom: 2px solid rgb(216, 213, 213);
+            width: 75%;
+            font-size: 14px;
+            height: 66px;
+                }
+}
+#poliza{
+    margin-bottom: 25px;
+}
+
+.qq{
+    color:  rgb(0, 213, 255);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
