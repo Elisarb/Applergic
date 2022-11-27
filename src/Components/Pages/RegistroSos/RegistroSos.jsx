@@ -17,11 +17,13 @@ export default function RegistroSos(){
   console.log(data);
 
   setJwt(data.token);
+
   setTimeout(function(){ 
     window.location.href = "/RegistroAlergias";
 
   },1);
 }
+  
 
     return (
 
