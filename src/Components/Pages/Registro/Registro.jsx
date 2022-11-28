@@ -44,7 +44,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
              console.log('Register user',);
              setTimeout(function(){ 
                 window.location.href = "/Emergencias";
-              },1);
+              },1000);
          })
          API.post('login', formData).then(res => {
        

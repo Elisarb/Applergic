@@ -17,8 +17,9 @@ const PerfilUsuario = () => {
     return (
       <div className='PerfilUsuario-total'>
           <div className='PerfilUsuario-Caja-img'>
+            <img hidden={usuario.userImage=== ""? false: false} className='PerfilUsuario-img' src={camara} alt="" />
                 <img hidden={usuario.userImage=== ""? true: true} className='PerfilUsuario-img' src={usuario.userImage} alt="" />
-                <img hidden={usuario.userImage=== ""? false: false} className='PerfilUsuario-img' src={camara} alt="" />
+                
           </div>
           <div className='PerfilUsuario-Caja-Info'>
             <div className='PerfilUsuario-Caja-Info-nombre'>
