@@ -7,7 +7,7 @@ import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
-
+import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
 
 
 
@@ -34,9 +34,10 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
     
 
     const {t} = useContext(MyContext)
+    const { setJwt } = useContext(JwtContext);
 
 
-    const {register, handleSubmit} =useForm();
+    const {register, handleSubmit,formState: { errors }} =useForm();
 
     const onSubmit = formData => {
          API.post('register', formData).then(res => {
@@ -45,6 +46,15 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
                 window.location.href = "/Emergencias";
               },1);
          })
+         API.post('login', formData).then(res => {
+       
+            localStorage.setItem('token', res.data.token)
+            localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
+            
+            setJwt(res.data.token);
+            
+            console.log(res.data.userInfo);
+        })
 
      }
   
@@ -67,6 +77,7 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
      
   <form  className='form-registro' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>
             <div className='div-top-form'>
+
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
 
@@ -75,12 +86,15 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 
                 </div>
             </div>
-                    <input id="userName" placeholder={t('name')}
-                        {...register("userName", { required: true })}/>
-
+    
+                <input class="input" id="userName" placeholder={t('name')}
+                  {...register("userName",{required: true,})}/>
+                  {errors.userName?.type === 'required' && "Añade un Nombre"}
                 
                     <input id="userMail" placeholder={t('email')}
                         {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
+                             {errors.userMail?.type === 'required' && "El email es requerido"}
+                            {errors.userMail?.type === 'pattern' && "Introduce un email valido: xxx@xxx.xx"} 
 
                     <input id="userPhone" placeholder={t('movil')}
                         {...register("userPhone", { required: true ,})}/>      
@@ -90,6 +104,8 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
                         {...register("password", {
                             required: true,
                             pattern: /[A-Za-z\d$@$!%*?&]{8,15}/ })}/>
+                            {errors.password?.type === 'required' && "La Contraseña es requerida"}
+                            {errors.password?.type === 'pattern' && "Introduce una contraseña valida: La contraseña debe tener minimo 8 y maximo 15 caracteres ,al menos una letra mayúscula y una letra minucula, al menos un dígito, no espacios en blanco y menos 1 caracter especial"}
 
 <button className='boton-login' disabled={!botonActivo}>Guardar Perfil</button>
     </form>

@@ -1,5 +1,5 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
@@ -9,6 +9,25 @@ import "./RegistroSos.scss"
 
 
 export default function RegistroSos(){
+  const [botonActivo,setBotonActivo]=useState(false);
+
+  const [inputSelected, setInputSelected]=useState([]);
+  
+  const handleChangeInput=e=>{
+    var auxiliar=null;
+    if(inputSelected.includes(e.target.value)){
+      auxiliar=inputSelected.filter(elemento=>elemento!==e.target.value);
+    }else{auxiliar=inputSelected.concat(e.target.value);
+    }
+    setInputSelected(auxiliar);
+  
+    if(auxiliar.length>0){
+      setBotonActivo(true);
+     } else{
+      setBotonActivo(false);
+     }
+    
+  }
   const {register, handleSubmit} =useForm();
 
   const { setJwt } = useContext(JwtContext);
@@ -50,7 +69,7 @@ export default function RegistroSos(){
 
       </div>
       
-    <form  className='form-sos' onSubmit={handleSubmit(onSubmit)}>
+    <form  className='form-sos' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>
             <input id="contactName" placeholder='Nombre completo de tu contacto'
                    {...register("contactName", { required: true , message: "You must specify your first name before moving forward"})}/>
 
@@ -67,10 +86,13 @@ export default function RegistroSos(){
             <input name="secureName" id="poliza"  placeholder='Compañia de Seguros/Nº Poliza'
                    {...register("secureName", { required: true,})}/>
 
-       <BtnGlobal2 type="submit" name="Guardar Emergencias" class= "rgb(196 196 196)"/>
+<button className='boton-login' disabled={!botonActivo}>Guardar Emergencia</button>
     </form>
         <div className='qq'> 
-            <a> Registrare mi usuario en otro momento</a>
+        <Link to="/RegistroAlergias">
+        <a> Registrare mi usuario en otro momento</a>
+              </Link>
+            
         </div>
   </>
        
