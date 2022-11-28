@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import config from "./config.json";
 import Quagga from "quagga";
+import { useNavigate } from "react-router-dom";
 
 const Scanner = props => {
   const { onDetected } = props;
+  const navigate = useNavigate()
 
   useEffect(() => {
     Quagga.init(config, err => {
@@ -63,7 +65,7 @@ const Scanner = props => {
 
   const detected = result => {
     onDetected(result.codeResult.code);
-    // Navigate(`/Escaneo/${result}`)
+    navigate(`/Escaneo/${result.codeResult.code}`)
   };
 
   return (

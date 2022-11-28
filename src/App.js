@@ -21,13 +21,11 @@ import DiarioLocal from './Components/Pages/DiarioLocal/DiarioLocal';
 import Escaneo from './Components/Pages/Escaneo/Escaneo';
 import Confirm from './Components/Pages/RegistroAlergias/ConfirmAllergies/Confirm'
 
-import AuthButton from './Components/Componentes/Shared/components/AuthButton/AuthButton';
 
 import {ApplergicContextProvider } from './Context/context';
 
 
 import { JwtContext } from './Components/Componentes/Shared/contexts/JwtContext'
-import RequireAuth from './Components/Componentes/Shared/components/RequireAuth/RequireAuth';
 import Valoraciones from './Components/Pages/Valoraciones/Valoraciones';
 import Traductor from './Components/Pages/Traductor/Traductor';
 import { useTranslation } from 'react-i18next';
@@ -37,9 +35,25 @@ import axios from 'axios';
 
 import PerfilUsuario from './Components/Pages/PerfilUsuario/PerfilUsuario';
 
+const BASEURL ="https://back-end-proyecto.vercel.app";
 
 function App() {
+  const [camera, setCamera] = useState(false);
   const [products,setProducts] = useState([]);
+  const [usuario, setusuario] = useState([]);
+
+  const user = JSON.parse(localStorage.getItem('user'));
+  useEffect(()=> {
+
+      const getData = async () => {
+          const {data}= await axios.get(`${BASEURL}/users/${user}`);
+
+          setusuario(data)
+          
+      };
+      getData();
+  
+  },[]);
   
     useEffect(()=>{
         async function getData() {
@@ -56,7 +70,7 @@ function App() {
   const [jwt, setJwt] = useState(localStorage.getItem('token') || null);
   return (
 
-    <JwtContext.Provider value={{ jwt, setJwt, products, setProducts }}>
+    <JwtContext.Provider value={{ jwt, setJwt, products, setProducts,camera,setCamera,usuario, setusuario }}>
     
     <MyContext.Provider value={{t, changeLanguaje}}> 
 

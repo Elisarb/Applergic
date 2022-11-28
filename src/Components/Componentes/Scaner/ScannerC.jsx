@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { JwtContext } from "../Shared/contexts/JwtContext";
 import Scanner from "./Scanner";
-import ReactDOM from "react-dom";
-
 import "./styles.css";
 
 
 function ScannerC() {
-  const [camera, setCamera] = useState(false);
+  const {camera, setCamera} = useContext(JwtContext);
   const [result, setResult] = useState(null);
-  let idBarcode
   const onDetected = result => {
     setResult(result)
+    
   };
-  console.log(idBarcode);
   return (
     <div className="App">
       <p>{result ? result : "Scanning..."}</p>
 
       <button onClick={() => setCamera(!camera)}>
-        {camera ? "Stop" : "Start"}
-      </button>
+       
+          {camera ? "Stop" : "Start"}
+        
+      </button> 
       <div className="container">
         {camera && <Scanner onDetected={onDetected} />}
       </div>
