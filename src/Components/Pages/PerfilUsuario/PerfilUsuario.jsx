@@ -8,6 +8,8 @@ import camara from '../../../Assets/camara.png'
 const PerfilUsuario = () => {
     const { usuario } = useContext(ApplergicContext);
     console.log(usuario)
+    const fecha = usuario.createdAt.substring(10, -1)
+    console.log(fecha)
   
     return (
       <div className='PerfilUsuario-total'>
@@ -26,9 +28,13 @@ const PerfilUsuario = () => {
             </div>
             <div className='PerfilUsuario-Caja-Info-email'>
                 <h1 className='PerfilUsuario-email-titulo'>TLF</h1>
-                <h1 className='PerfilUsuario-email'>{usuario.userPhone}</h1>
+                <h1 className='PerfilUsuario-email'>(+34){usuario.userPhone}</h1>
             </div>
+            <div className='PerfilUsuario-Caja-tiempo'>
+            <h1 className='PerfilUsuario-tiempo'>Miembro desde: {fecha}</h1>
           </div>
+          </div>
+          
           <div className='Home-Footer'>
             <div className='Home-Footer-Caja'>
                 <BtnHome></BtnHome>
