@@ -8,6 +8,7 @@ import camara from '../../../Assets/camara.png'
 import SimpleBarReact from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 const PerfilUsuario = () => {
+
     const { usuario } = useContext(ApplergicContext);
     console.log(usuario)
     const fecha = usuario.createdAt.substring(10, -1)

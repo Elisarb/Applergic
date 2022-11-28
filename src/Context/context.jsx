@@ -46,7 +46,6 @@ export const ApplergicContextProvider =({ children }) => {
     
     },[]);
 
-
     // useEffect(()=> {
 
     //     const getBlogs = async () => {
