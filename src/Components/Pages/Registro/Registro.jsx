@@ -81,7 +81,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
 
-                        <input type='file' id="userImage" name="file" placeholder='Subir Foto'
+                        <input id="userImage" name="file" placeholder='Subir Foto'
                         {...register("userImage", { required: true ,  })}/>
 
                 </div>
