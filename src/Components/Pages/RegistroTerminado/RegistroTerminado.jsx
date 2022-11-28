@@ -19,12 +19,13 @@ export default function RegistroTerminado(){
     return (
 
       <>     
-      <div className='arribaas'>
-      <div className='top-top-2'>
+      <div className='top-terminado'>
+      <div className='top'>
       <Link to="/Emergencias">
             <VolverGlobal/>
        </Link>
       <p>4 {t('de')} 4</p>
+      </div>
       <Link to="/Emergencias">
             <VolverGlobal/>
        </Link>
@@ -32,7 +33,7 @@ export default function RegistroTerminado(){
        <Link to="/Home">
         <img  className='x-img' src={x}/>
         </Link>
-      </div>
+      
       </div>
       <div className='allgood'>
       <img  className='good-img' src={good}/>
