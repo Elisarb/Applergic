@@ -34,6 +34,7 @@ export default function RegistroTerminado(){
         <img  className='x-img' src={x}/>
         </Link>
       
+
       </div>
       <div className='allgood'>
       <img  className='good-img' src={good}/>
