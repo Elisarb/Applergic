@@ -104,10 +104,28 @@
     border: 3px solid black;
     border-color: rgba(13, 51, 32, 0.1);
     border-radius: 10px;
-    border-top-left-radius: 0px;
+    
     
     font-family: Monserrat-Medium;
-    font-size: 10px;
-    display: flex;
     
+    display: flex;
+    .PerfilUsuario-tiempo{
+        font-size: 16px;
+    }
+}
+
+.PerfilUsuario-Caja-alergenos{
+    height: 100px;
+    width: 50%;
+    background-color: rgb(196 196 196);
+    border: 3px solid black;
+    border-color: rgba(13, 51, 32, 0.1);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.PerfilUsuario-Caja-alergeno{
+
+}
+.PerfilUsuario-alergeno-txt{
+    font-size: 20px;
 }
