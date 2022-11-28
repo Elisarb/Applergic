@@ -44,6 +44,7 @@ export default function Confirm(){
     
     function updatePost() {
         obtenerIdAlergias()
+        // API.put(`https://back-end-proyecto.vercel.app/users/${info}`, {
         API.put(`http://localhost:5000/users/${info}`, {
             allergens: idAlergias,
 

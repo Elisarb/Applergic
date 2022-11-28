@@ -49,17 +49,24 @@ import ImagePicker from 'simple-react-image-picker'
              console.log(res);
              setTimeout(function(){ 
                 window.location.href = "/Emergencias";
-              },1000);
-         })
-         API.post('login', formData).then(res => {
-       
-            localStorage.setItem('token', res.data.token)
-            localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
-            
-            setJwt(res.data.token);
-            
-            console.log(res.data.userInfo);
-        })
+              },500);
+            ingresar()
+
+         }
+        )
+
+        function ingresar(){
+            API.post('login', formData).then(res => {
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
+                
+                setJwt(res.data.token);
+                
+                console.log(res.data.userInfo);
+            })
+        }
+         
+        
 
      }
   
@@ -89,8 +96,10 @@ import ImagePicker from 'simple-react-image-picker'
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
 
-                        <input  id="userImage" name="file" placeholder='Subir Foto'
-                        {...register("userImage", { required: true })}/>
+
+                        <input id="userImage" name="file" placeholder='Subir Foto'
+                        {...register("userImage", { required: true ,  })}/>
+
 
                 </div>
             </div>
