@@ -12,24 +12,30 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
+    "barcode-reader": "^1.6.1",
     "bootstrap": "^5.2.3",
+    "dynamsoft-javascript-barcode": "^9.3.1",
     "google-map-react": "^2.2.0",
+    "html5-qrcode": "^2.3.3",
     "i18n": "^0.15.1",
     "i18next": "^22.0.6",
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",
-    "react": "^18.2.0",
+    "quagga": "^0.12.1",
+    "react-barcode": "^1.4.6",
     "react-bootstrap": "^2.6.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.39.5",
+    "react-hook-form": "^7.39.6",
     "react-hooks": "^1.0.1",
     "react-i18next": "^12.0.0",
+    "react-native-scan-barcode": "^3.1.7",
     "react-qr-scanner": "^1.0.0-alpha.11",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-vision-camera": "^1.0.1",
     "reactstrap": "^9.1.5",
     "sass": "^1.56.1",
     "simplebar-react": "^2.4.3",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -57,6 +63,10 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.3"
+    "@types/react": "^18.0.25",
+    "node-sass": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.3"
   }
 }
