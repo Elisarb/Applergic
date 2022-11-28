@@ -6,9 +6,9 @@ const BtnFav = () => {
         let location = useLocation();
     return(
         
-            <div className='Btn-Fav-Caja'><Link to={`/Favoritos`}>
+            <div className='Btn-Fav-Caja'>
                     <img hidden={location.pathname==='/Favoritos'? false : true} className='Btn-Fav-Image' src={Btn1} alt="" />
-                    <img hidden={location.pathname==='/Favoritos'? true : false} className='Btn-Fav-Image' src={Btn2} alt="" /></Link>
+                    <img hidden={location.pathname==='/Favoritos'? true : false} className='Btn-Fav-Image' src={Btn2} alt="" />
             </div>
         
     )

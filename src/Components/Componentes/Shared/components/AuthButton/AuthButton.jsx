@@ -2,10 +2,13 @@ import React from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { JwtContext } from "../../contexts/JwtContext";
-
+import { MyContext } from "../../contexts/MyContext";
+import img1 from '../../../../../Assets/Btn-Salir.png'
+import './AuthButton.scss'
 
 export default function AuthButton () {
     const {jwt, setJwt} = useContext(JwtContext);
+    const {t} = useContext(MyContext)
     let navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem('user'));
     const signOut = () => {
@@ -17,14 +20,16 @@ export default function AuthButton () {
     }
 console.log(user)
     return jwt && user ? (
-        <p>
+        
             
-            <button
+            <button className="BTNBYE"
+            
                 onClick={signOut}
             >
-                Sign out
+                <img src={img1} alt="" />
+                <h1>{t('salir')}</h1>
             </button>
-        </p>
+        
     ) : (
         <p>You are not logged in.</p>
     );

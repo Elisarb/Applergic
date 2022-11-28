@@ -46,7 +46,7 @@ const navigate = useNavigate()
   console.log("2"+open2)
   
   const Traducir = () => {
-    console.log("Traducir")
+    console.log("Fav")
   }
   const Términos = () => {
     console.log("Términos")
@@ -71,7 +71,7 @@ const navigate = useNavigate()
                 </div>
                 
                 
-                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/Favoritos")}>
+                <div className='Hamburguesa-Opcion-Caja'onClick={()=> Traducir()}>
                     <img className='Hamburguesa-Opcion-img' src={ImgUFavorito} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('favorito')}</h1>
                 </div>
@@ -95,8 +95,7 @@ const navigate = useNavigate()
                     <h1 className='Hamburguesa-Opcion-txt'>{t('terminos')}</h1>
                 </div>
                 <div className='Hamburguesa-Opcion-Caja' onClick={()=> Salir()}>
-                    <img className='Hamburguesa-Opcion-img' src="" alt="" />
-                    <h1 className='Hamburguesa-Opcion-txt'>{t('salir')}</h1>
+                    
                     <AuthButton/>
                 </div>
             </div>

@@ -12,10 +12,7 @@ const Fav = () => {
 
     return (
       <div>
-        <img src={usuario.userImage} alt="" />
-        <h1>{usuario.userName}</h1>
-        <h1>{usuario.userMail}</h1>
-        <h1>{usuario.allergens}</h1>
+        
         <div className='Home-Footer'>
             <div className='Home-Footer-Caja'>
                 <BtnHome></BtnHome>

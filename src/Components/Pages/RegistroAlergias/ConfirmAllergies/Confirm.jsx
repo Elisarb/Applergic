@@ -5,6 +5,7 @@ import { ApplergicContext } from "../../../../Context/context";
 import { BtnGlobal2 } from "../../../Componentes/Shared/BtnGlobal2/BtnGlobal2";
 import { useForm } from "react-hook-form";
 import { API } from "../../../../Components/Componentes/Shared/services/api";
+import { MyContext } from "../../../../Components/Componentes/Shared/contexts/MyContext";
 // import Axios from "Axios";
 
 export default function Confirm(){
@@ -15,6 +16,9 @@ export default function Confirm(){
     let alergiasConfirm = alergiasSelect.split(",");
     console.log(alergiasConfirm)
     const {register,handleSubmit} = useForm();
+    const {t} = useContext(MyContext);
+    const { alergenos } = useContext(ApplergicContext);
+    let idAlergias = [];
 
     // function agregar(){
     //     // window.location.href = "/RegistroAlergias";
@@ -22,13 +26,51 @@ export default function Confirm(){
     // }
 
 
+    // const onSubmit = () =>{
+    //     API.put(`${info}`, alergiasConfirm).then(res => {
+    //         console.log('Registered')
+    //         })
+    // }
+
     const onSubmit = () =>{
         API.put(`${info}`, alergiasConfirm).then(res => {
             console.log('Registered')
             
             })
+        try{
+            updatePost()
+            }
+            catch(error){
+                console.log(`errorcito`)
+            }
+        window.location.href = "/terminado";
     }
+    
+    function updatePost() {
+        obtenerIdAlergias()
+        // API.put(`https://back-end-proyecto.vercel.app/users/${info}`, {
+        API.put(`http://localhost:5000/users/${info}`, {
+            allergens: idAlergias,
 
+          })
+          .then((response) => {
+            console.log("registrado ahora si");
+            console.log(response);
+            // console.log(`${idAlergias}`)
+          });
+      }
+
+      function obtenerIdAlergias(){
+        alergiasConfirm.forEach(alerUsu => {
+            alergenos.forEach(aler =>{
+                if (alerUsu === aler.allergensName){
+                    idAlergias.push(aler._id)
+                }
+                
+            })
+          
+        });
+      }
 
     const handleChange = (e) => {
         const { value, checked } = e.target;

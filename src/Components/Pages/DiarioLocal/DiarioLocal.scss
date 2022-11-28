@@ -108,6 +108,14 @@
     width: 100%;
     height: 100%;
 }
+@media (min-width: 700px) {
+    .DiarioLocal-Producto{
+        height: 200px;
+    }
+    .DiarioLocal-Producto-img{
+        max-width: 200px;
+    }
+    }
 
 
 
