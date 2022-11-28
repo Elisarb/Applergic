@@ -44,17 +44,24 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
              console.log('Register user',);
              setTimeout(function(){ 
                 window.location.href = "/Emergencias";
-              },1000);
-         })
-         API.post('login', formData).then(res => {
-       
-            localStorage.setItem('token', res.data.token)
-            localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
-            
-            setJwt(res.data.token);
-            
-            console.log(res.data.userInfo);
-        })
+              },500);
+            ingresar()
+
+         }
+        )
+
+        function ingresar(){
+            API.post('login', formData).then(res => {
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
+                
+                setJwt(res.data.token);
+                
+                console.log(res.data.userInfo);
+            })
+        }
+         
+        
 
      }
   
