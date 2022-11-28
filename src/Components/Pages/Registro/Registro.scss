@@ -21,6 +21,7 @@
     align-content: center;
     align-items: center;
     justify-content: center;
+    
         input{
             background-color: transparent !important;
             border: none;
@@ -30,39 +31,13 @@
             height: 64px;
         
         }
-        button{
-            font-size: 17px;
-            width: 80%;
-        }
 }
 #password-id{
     margin-bottom: 44px;
 }
-.div-top-form{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: 111px;
-    width: 111px;
-    border-radius:100px;
-    border: solid rgb(0, 213, 255);
+#userName{
+margin-top: 40px;
 }
-.div-cam-input{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
-    .ima-cam{
-    
-        height: 80px;
-    }
-
-}
-
 
 @media (min-width: 700px) {
     .boton-login{
