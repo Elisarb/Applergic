@@ -22,6 +22,9 @@ const PerfilUsuario = () => {
                 <img hidden={usuario.userImage=== ""? true: true} className='PerfilUsuario-img' src={usuario.userImage} alt="" />
                 
           </div>
+          <div className='PerfilUsuario-Caja-tiempo'>
+            <h1 className='PerfilUsuario-tiempo'>Miembro desde: {fecha}</h1>
+          </div>
           <div className='PerfilUsuario-Caja-Info'>
             <div className='PerfilUsuario-Caja-Info-nombre'>
                 <h1 className='PerfilUsuario-nombre-titulo'>NOMBRE</h1>
@@ -35,9 +38,7 @@ const PerfilUsuario = () => {
                 <h1 className='PerfilUsuario-email-titulo'>TLF</h1>
                 <h1 className='PerfilUsuario-email'>(+34){usuario.userPhone}</h1>
             </div>
-            <div className='PerfilUsuario-Caja-tiempo'>
-            <h1 className='PerfilUsuario-tiempo'>Miembro desde: {fecha}</h1>
-          </div>
+            
           <div className='PerfilUsuario-Caja-alergenos'><SimpleBarReact style={{maxHeight:90}}>
             {alergenos.map((alergeno, index)=>
             <div className='PerfilUsuario-Caja-alergeno' key={index}>

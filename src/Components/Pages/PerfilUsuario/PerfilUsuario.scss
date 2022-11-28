@@ -35,28 +35,31 @@
     
 }
 .PerfilUsuario-nombre-titulo{
-    background-color: rgb(196 196 196);
+  //  background-color: rgb(196 196 196);
     border: 3px solid black;
+    color: grey;
     border-color: rgba(13, 51, 32, 0.1);
     border-radius: 10px;
-    width: 175px;
+    width: 40%;
     margin: -1px;
     border-bottom: 0px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0px;
     text-align: center;
     font-family: Monserrat-bold;
+    font-size: 25px;
 }
 .PerfilUsuario-nombre{
     height: 60px;
     margin: -1px;
     padding-left: 15px;
-    background-color: rgb(196 196 196);
+    //background-color: rgb(196 196 196);
     border: 3px solid black;
     border-color: rgba(13, 51, 32, 0.1);
     border-radius: 10px;
     border-top-left-radius: 0px;
     font-family: Monserrat-Medium;
+    font-size: 25px;
     display: flex;
     align-items: center;
     
@@ -67,10 +70,11 @@
 }
 
 .PerfilUsuario-email-titulo{
-    background-color: rgb(196 196 196);
+   // background-color: rgb(196 196 196);
     border: 3px solid black;
     border-color: rgba(13, 51, 32, 0.1);
     border-radius: 10px;
+    color: grey;
     width: 150px;
     margin: -1px;
     border-bottom: 0px;
@@ -78,6 +82,7 @@
     border-bottom-left-radius: 0px;
     text-align: center;
     font-family: Monserrat-bold;
+    font-size: 25px;
     
 }
 
@@ -85,19 +90,23 @@
     height: 50px;
     margin: -1px;
     padding-left: 15px;
-    background-color: rgb(196 196 196);
+   // background-color: rgb(196 196 196);
     border: 3px solid black;
     border-color: rgba(13, 51, 32, 0.1);
     border-radius: 10px;
     border-top-left-radius: 0px;
     
     font-family: Monserrat-Medium;
+    font-size: 25px;
     display: flex;
     align-items: center;
 }
 
 .PerfilUsuario-Caja-tiempo{
-    height: 30px;
+    position:absolute;
+    top:206px;;
+    
+    height: 18px;
     margin: -1px;
     padding-left: 15px;
     background-color: rgb(196 196 196);
@@ -107,17 +116,17 @@
     
     
     font-family: Monserrat-Medium;
-    
+    text-align: center;
     display: flex;
     .PerfilUsuario-tiempo{
-        font-size: 16px;
+        font-size: 10px;
     }
 }
 
 .PerfilUsuario-Caja-alergenos{
     height: 100px;
     width: 50%;
-    background-color: rgb(196 196 196);
+    //background-color: rgb(196 196 196);
     border: 3px solid black;
     border-color: rgba(13, 51, 32, 0.1);
     border-radius: 10px;
@@ -129,3 +138,11 @@
 .PerfilUsuario-alergeno-txt{
     font-size: 20px;
 }
+
+@media (min-width: 700px) {
+    .PerfilUsuario-Caja-Info{
+        width: 609px;
+        height: 420px;
+        margin-top: 0px;
+    }
+    }
