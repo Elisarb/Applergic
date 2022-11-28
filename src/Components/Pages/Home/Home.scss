@@ -1,3 +1,4 @@
+
 .Home-total{
     display: flex;
     flex-direction: column;
@@ -8,7 +9,7 @@
     background-color: rgb(217, 217, 217);
     border: 1px solid lightgrey;
     border-bottom-color:black ;
-    width: 64%;
+    width: 60%;
     height: 430px;
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@
 .Hamburguesa-Opciones-Caja{}
 
 .Hamburguesa-Opcion-Caja{
-    border: 1px solid red;
+    border-top: 1px solid lightcyan;
     display: flex;
     height: 48px;
     width: 180px;
@@ -166,4 +167,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+@media (min-width: 700px) {
+.Hamburguesa-Wrap{
+    width: 420px;
+}
 }
