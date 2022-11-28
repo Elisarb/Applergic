@@ -35,6 +35,8 @@ import { MyContext } from './Components/Componentes/Shared/contexts/MyContext';
 import MyBarcode from './Components/Pages/MyBarcode/MyBarcode';
 import axios from 'axios';
 
+import PerfilUsuario from './Components/Pages/PerfilUsuario/PerfilUsuario';
+
 
 function App() {
   const [products,setProducts] = useState([]);
@@ -85,6 +87,7 @@ function App() {
           <Route path="/Buscar" element={<Buscar></Buscar>} />  
           <Route path="/Valoraciones" element={<Valoraciones></Valoraciones>} />
           <Route path="/Traductor" element={<Traductor></Traductor>} />
+          <Route path="/PerfilUsuario" element={<PerfilUsuario></PerfilUsuario>} />
 
         </Routes>
         </ApplergicContextProvider> 

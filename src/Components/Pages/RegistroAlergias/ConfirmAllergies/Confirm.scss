@@ -87,17 +87,21 @@
     }
 
     .btn-add{
-        width: auto;
+        width: fit-content;
         height: 30px;
         border-radius: 15px;
         background: white;
         border:1px solid rgb(168, 168, 168);
         color:rgb(168, 168, 168);
         font-family: Monserrat-regular;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         a{
             color:rgb(168, 168, 168);
             text-decoration: none;
+            width:fit-content;
         }
     }
 
@@ -112,6 +116,8 @@
     form{
         display:flex;
         flex-wrap: wrap;
+        width:100%;
+
     }
     
     

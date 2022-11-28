@@ -1,7 +1,18 @@
-.arribaa {
+.top-register {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.top-register-p{
+    display: flex;
+    flex-direction: row;
+    margin-top: 34px;
+    justify-content: flex-start;
+    p{
+       text-align: center;   
+       width: 100%;
+    }
+       
 }
 
 .form-registro{
@@ -10,14 +21,12 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
         input{
             background-color: transparent !important;
-            margin-bottom: 5px;
             border: none;
             border-bottom: 2px solid rgb(216, 213, 213);
             width: 75%;
-            font-size: 22px;
+            font-size: 14px;
             height: 64px;
         
         }
@@ -25,11 +34,11 @@
             font-size: 17px;
             width: 80%;
         }
-       #username{
-         visibility: hidden;
-        }
 }
-.footo{
+#password-id{
+    margin-bottom: 44px;
+}
+.div-top-form{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -40,19 +49,16 @@
     border-radius:100px;
     border: solid rgb(0, 213, 255);
 }
-.footo2{
+.div-cam-input{
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     justify-content: center;
     height: 80px;
-    .imaaa{
+    .ima-cam{
     
-        height: 80%;
+        height: 80px;
     }
-    .imaaaa{
-        width: 50px;
-        height:18px
-    }
+
 }
