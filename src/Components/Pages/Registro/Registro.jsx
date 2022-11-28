@@ -8,6 +8,7 @@ import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
+import Demo from '../../Pages/Imagen/Demo';
 
 
 
@@ -73,6 +74,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
     return (
 
 <>     
+
     <div className='top-register'>
         
         <Link to="/login"> <VolverGlobal/></Link>
@@ -91,18 +93,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
         
       </div>
   <form  className='form-registro' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>
-            <div className='div-top-form'>
-
-                <div className='div-cam-input'>
-                        <img  className='ima-cam' src={camara}/>
-
-
-                        <input id="userImage" name="file" placeholder='Subir Foto'
-                        {...register("userImage", { required: true ,  })}/>
-
-
-                </div>
-            </div>
+            <Demo/>
     
                 <input class="input" id="userName" placeholder={t('name')}
                   {...register("userName",{required: true,})}/>

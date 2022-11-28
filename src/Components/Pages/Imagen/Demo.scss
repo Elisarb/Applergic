@@ -1,0 +1,61 @@
+
+
+.subirfoto{
+    height: 17px;
+    width: 45px;
+}
+.camara-form{
+    height: 60px;
+    width: 80px;
+}
+
+.div-top-form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 111px;
+    width: 111px;
+    border-radius:100px;
+    border: solid rgb(0, 213, 255);
+}
+.div-cam-input{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    .ima-cam{
+    
+        height: 80px;
+    }
+    
+}
+
+.mostrar{
+    img{
+
+        position: relative;
+        border-radius:100px;
+        border: solid rgb(0, 213, 255);  
+         height: 111px;
+        width: 111px;
+     
+    }
+
+}
+
+.div-cam-input{
+    position:absolute;
+
+}
+.delete{
+    background-color: rgba(255, 74, 74, 0.819);
+    border:solid 2px black;
+    position:fixed;
+    border-radius: 100px;
+    margin-left: 45px;
+  
+   }

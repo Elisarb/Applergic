@@ -3,9 +3,10 @@
     flex-direction: column;
     align-items: center;
         p{
-        
+            position: absolute;
+            top: 30px;
            text-align: center;   
-           width: 100%;
+    
         }
        
 
@@ -35,5 +36,38 @@
     height: 24px;
     position: absolute;
     right: 16px;
+    top: 30px;
     
 }
+.qq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    a{
+        width: 87%;
+        text-decoration: none;
+     
+    }
+}
+.boton-terminado{
+    width: 87%;
+    height: 50px;
+    font-size: 25px;
+    border-radius:8px;
+    border-color: rgba(13, 51, 32, 0.1);
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgb(38 199 220);
+    
+}
+
+@media (min-width: 700px) {
+    .boton-terminado{
+        width: 609px;
+    }
+    
+    }
