@@ -1,0 +1,113 @@
+.PerfilUsuario-total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PerfilUsuario-Caja-img{
+    width: 200px;
+    height: 200px;
+    border: 5px solid #2fa8b8;
+    background-color: rgb(38 199 220);
+    border-radius: 10px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.PerfilUsuario-img{
+    border: 3px solid #2fa8b8;
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+}
+
+.PerfilUsuario-Caja-Info{
+    width: 87%;
+    margin-top: 50px;
+}
+
+.PerfilUsuario-Caja-Info-nombre{
+    margin-bottom: 15px;
+    
+}
+.PerfilUsuario-nombre-titulo{
+    background-color: rgb(196 196 196);
+    border: 3px solid black;
+    border-color: rgba(13, 51, 32, 0.1);
+    border-radius: 10px;
+    width: 175px;
+    margin: -1px;
+    border-bottom: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0px;
+    text-align: center;
+    font-family: Monserrat-bold;
+}
+.PerfilUsuario-nombre{
+    height: 60px;
+    margin: -1px;
+    padding-left: 15px;
+    background-color: rgb(196 196 196);
+    border: 3px solid black;
+    border-color: rgba(13, 51, 32, 0.1);
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    font-family: Monserrat-Medium;
+    display: flex;
+    align-items: center;
+    
+}
+
+.PerfilUsuario-Caja-Info-email{
+    margin-bottom: 15px;
+}
+
+.PerfilUsuario-email-titulo{
+    background-color: rgb(196 196 196);
+    border: 3px solid black;
+    border-color: rgba(13, 51, 32, 0.1);
+    border-radius: 10px;
+    width: 150px;
+    margin: -1px;
+    border-bottom: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0px;
+    text-align: center;
+    font-family: Monserrat-bold;
+    
+}
+
+.PerfilUsuario-email{
+    height: 50px;
+    margin: -1px;
+    padding-left: 15px;
+    background-color: rgb(196 196 196);
+    border: 3px solid black;
+    border-color: rgba(13, 51, 32, 0.1);
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    
+    font-family: Monserrat-Medium;
+    display: flex;
+    align-items: center;
+}
+
+.PerfilUsuario-Caja-tiempo{
+    height: 30px;
+    margin: -1px;
+    padding-left: 15px;
+    background-color: rgb(196 196 196);
+    border: 3px solid black;
+    border-color: rgba(13, 51, 32, 0.1);
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    
+    font-family: Monserrat-Medium;
+    font-size: 10px;
+    display: flex;
+    
+}

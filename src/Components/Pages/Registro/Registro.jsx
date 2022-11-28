@@ -7,25 +7,56 @@ import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
+import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
 
 
-export default function Registro(){
-  const {t} = useContext(MyContext)
 
+  export default function Registro(){
+    const [botonActivo,setBotonActivo]=useState(false);
 
-  const {register, handleSubmit,getValues} =useForm();
-console.log(getValues());
-  const onSubmit = formData => {
-   
+    const [inputSelected, setInputSelected]=useState([]);
     
-    const {userImage, ...rest } = formData
-    console.log("aa", rest);
-    console.log('objectkeys', Object.keys(userImage));
-       API.post('register', formData).then(res => {
-           console.log('Register user')
-       })
-   }
+    const handleChangeInput=e=>{
+      var auxiliar=null;
+      if(inputSelected.includes(e.target.value)){
+        auxiliar=inputSelected.filter(elemento=>elemento!==e.target.value);
+      }else{auxiliar=inputSelected.concat(e.target.value);
+      }
+      setInputSelected(auxiliar);
+    
+      if(auxiliar.length>0){
+        setBotonActivo(true);
+       } else{
+        setBotonActivo(false);
+       }
+      
+    }
+    
 
+    const {t} = useContext(MyContext)
+    const { setJwt } = useContext(JwtContext);
+
+
+    const {register, handleSubmit,formState: { errors }} =useForm();
+
+    const onSubmit = formData => {
+         API.post('register', formData).then(res => {
+             console.log('Register user',);
+             setTimeout(function(){ 
+                window.location.href = "/Emergencias";
+              },1);
+         })
+         API.post('login', formData).then(res => {
+       
+            localStorage.setItem('token', res.data.token)
+            localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
+            
+            setJwt(res.data.token);
+            
+            console.log(res.data.userInfo);
+        })
+
+     }
   
     return (
 
@@ -44,20 +75,26 @@ console.log(getValues());
      </div>
  </div>
      
-  <form  className='form-registro' onSubmit={handleSubmit(onSubmit)}>
+  <form  className='form-registro' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>
             <div className='div-top-form'>
+
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
-                        <input type="file" multiple id="userImage" name="file" placeholder='Subir Foto'
+
+                        <input  multiple id="userImage" name="file" placeholder='Subir Foto'
                         {...register("userImage", { required: true ,  })}/>
+
                 </div>
             </div>
-                    <input id="userName" placeholder={t('name')}
-                        {...register("userName", { required: true })}/>
-
+    
+                <input class="input" id="userName" placeholder={t('name')}
+                  {...register("userName",{required: true,})}/>
+                  {errors.userName?.type === 'required' && "Añade un Nombre"}
                 
                     <input id="userMail" placeholder={t('email')}
                         {...register("userMail", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
+                             {errors.userMail?.type === 'required' && "El email es requerido"}
+                            {errors.userMail?.type === 'pattern' && "Introduce un email valido: xxx@xxx.xx"} 
 
                     <input id="userPhone" placeholder={t('movil')}
                         {...register("userPhone", { required: true ,})}/>      
@@ -67,8 +104,10 @@ console.log(getValues());
                         {...register("password", {
                             required: true,
                             pattern: /[A-Za-z\d$@$!%*?&]{8,15}/ })}/>
+                            {errors.password?.type === 'required' && "La Contraseña es requerida"}
+                            {errors.password?.type === 'pattern' && "Introduce una contraseña valida: La contraseña debe tener minimo 8 y maximo 15 caracteres ,al menos una letra mayúscula y una letra minucula, al menos un dígito, no espacios en blanco y menos 1 caracter especial"}
 
-                    <BtnGlobal2 type="submit" name={t('guardarPerfil')} class="rgb(196 196 196)"/>
+<button className='boton-login' disabled={!botonActivo}>Guardar Perfil</button>
     </form>
  </>
        

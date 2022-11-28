@@ -4,6 +4,7 @@ export const en = {
     buscarTexto: "Find a business or restaurant for you.", 
     escanear: "Scan",
     escanearTexto: "Scan a new product.",
+    escanearTexto2: "Scan another product.",
     sos: "Do you need urgent help? contact us with emergencies.",
     perfil:"Profile",
     favorito:"Favorite",

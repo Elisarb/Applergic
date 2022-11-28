@@ -65,7 +65,7 @@ const navigate = useNavigate()
             </div>
             <div className='Hamburguesa-Opciones-Caja'>
                 
-                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/")}>
+                <div className='Hamburguesa-Opcion-Caja' onClick={()=> navigate ("/PerfilUsuario")}>
                     <img className='Hamburguesa-Opcion-img' src={ImgUsuario} alt="" />
                     <h1 className='Hamburguesa-Opcion-txt'>{t('perfil')}</h1>
                 </div>
