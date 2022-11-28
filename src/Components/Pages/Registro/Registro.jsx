@@ -8,10 +8,15 @@ import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
+import ImagePicker from 'simple-react-image-picker'
+
+
 
 
 
   export default function Registro(){
+    
+
     const [botonActivo,setBotonActivo]=useState(false);
 
     const [inputSelected, setInputSelected]=useState([]);
@@ -41,7 +46,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
 
     const onSubmit = formData => {
          API.post('register', formData).then(res => {
-             console.log('Register user',);
+             console.log(res);
              setTimeout(function(){ 
                 window.location.href = "/Emergencias";
               },1000);
@@ -74,15 +79,18 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
         </div>
      </div>
  </div>
-     
+ <div>
+
+        
+      </div>
   <form  className='form-registro' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>
             <div className='div-top-form'>
 
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
 
-                        <input type='file' id="userImage" name="file" placeholder='Subir Foto'
-                        {...register("userImage", { required: true ,  })}/>
+                        <input  id="userImage" name="file" placeholder='Subir Foto'
+                        {...register("userImage", { required: true })}/>
 
                 </div>
             </div>
