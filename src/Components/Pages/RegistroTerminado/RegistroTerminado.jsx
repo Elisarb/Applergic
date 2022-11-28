@@ -25,7 +25,13 @@ export default function RegistroTerminado(){
             <VolverGlobal/>
        </Link>
       <p>4 {t('de')} 4</p>
-      <img  className='x-img' src={x}/>
+      <Link to="/Emergencias">
+            <VolverGlobal/>
+       </Link>
+      
+       <Link to="/Home">
+        <img  className='x-img' src={x}/>
+        </Link>
       </div>
       </div>
       <div className='allgood'>
