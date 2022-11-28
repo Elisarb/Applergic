@@ -11,6 +11,10 @@ export default function RegistroTerminado(){
   
   const {t} = useContext(MyContext)
 
+  function nextpage(){
+    window.location.href = "/escaneo";
+  }
+
 
     return (
 
@@ -29,7 +33,9 @@ export default function RegistroTerminado(){
       <h1>{t('terminado')}</h1>
       </div>
         <div className='qq'> 
+        <a href="/escaneo">
         <BtnGlobal2 type="submit" name={t('escaneaproduct')} class="rgb(38 199 220)"/>
+        </a>
         </div>
         </>
        
