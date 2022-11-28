@@ -13,14 +13,17 @@ const Portada = () => {
   let loggedIn= false;
 
   function Redirect(){
-    if(info == undefined){
+    console.log(info)
+    if(info === undefined){
     setTimeout(function(){ 
       window.location.href = "/bienvenida";
     },3000);
+    console.log("porque no estabas loggeado");
   }else{
     setTimeout(function(){ 
       window.location.href = "/Home";
     },3000);
+    console.log("porque SI estabas loggeado");
   }
   }
 

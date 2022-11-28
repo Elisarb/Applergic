@@ -46,12 +46,13 @@ const handleChangeInput=e=>{
         localStorage.setItem('user', JSON.stringify(res.data.userInfo._id))
         
         setJwt(res.data.token);
-        setTimeout(function(){ 
-          window.location.href = "/Home";
-        },1);
         console.log(res.data.userInfo);
+        window.location.href = "/Home";
     })
-}
+
+    
+    }
+
 
 
     return (
