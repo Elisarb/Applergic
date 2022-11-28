@@ -8,7 +8,7 @@ import { BtnGlobal2 } from '../../Componentes/Shared/BtnGlobal2/BtnGlobal2';
 import { API } from "../../Componentes/Shared/services/api";
 import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
-import ImagePicker from 'simple-react-image-picker'
+
 
 
 
