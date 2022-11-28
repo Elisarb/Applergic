@@ -104,3 +104,9 @@ button:disabled {
     background-color: rgb(38 199 220);
 }
 
+@media (min-width: 700px) {
+    .boton-login{
+        width: 609px;
+    }
+    
+    }
