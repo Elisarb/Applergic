@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+import { ApplergicContext } from '../../../Context/context';
 import BtnDiary from '../../Componentes/Shared/Btn-Diary/Btn-Diary';
 import BtnFav from '../../Componentes/Shared/Btn-Fav/Btn-Fav';
 import BtnShare from '../../Componentes/Shared/Btn-Share/Btn-Share';
@@ -11,36 +12,35 @@ import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import './MyBarcode.scss'
 
 const MyBarcode = () => {
+    const { usuario } = useContext(ApplergicContext);
+    console.log(usuario.allergens)
     const {t} = useContext(MyContext)
-
+    
     let myproducts=[]
-    const {products} = useContext(JwtContext);
+    const {products, camera, setCamera} = useContext(JwtContext);
     // const [myproduct, setMyproduct]=useState({})
     const {idBarcode} = useParams(0);
-        
+    myproducts.map((myproduct)=>{usuario.allergens.map((allergen)=>{
+        const productAllergic = myproduct.filter(ingredients=>ingredients.toLowerCase().includes(allergen.toLowerCase()))
+    console.log(productAllergic)
+    }) 
     
+
+})
+    ;
     products.forEach(element => {
         if (element.barCode.toString()===idBarcode){
             myproducts.push(element);
-            console.log(myproducts);  
         }{}
         
     });
-    // useEffect(()=>{
-    //     async function getData() {
-    //         const {data} = await axios.get(`https://back-end-proyecto.vercel.app/products/${product._id}`)
-    //         setProduct(data);
-    //         console.log(data);
-    //     }getData() 
-    // },[])
-    // products.map((product,index)=>{
-    //     {product.barCode === Number(idBarcode) && setMyproduct(product)}})
+
   return (
         
           myproducts.map((myproduct,index)=>{return(
           <> 
-        <div className='c-valorationPage__volver'>
-            <Link  to={`/Escaneo`}><VolverGlobal/></Link>
+        <div className='c-valorationPage__volver' key={index}>
+            <Link  to={`/Escaneo`}><VolverGlobal onClick={() => setCamera(!camera)}/></Link>
         </div>
             <div key={index} className="c-infoBoxProduct">
                 <h1>Aquí tienes el resultado</h1>

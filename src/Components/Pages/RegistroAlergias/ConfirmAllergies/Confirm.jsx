@@ -25,6 +25,7 @@ export default function Confirm(){
     const onSubmit = () =>{
         API.put(`${info}`, alergiasConfirm).then(res => {
             console.log('Registered')
+            
             })
     }
 

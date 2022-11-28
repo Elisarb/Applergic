@@ -20,7 +20,7 @@ const DiarioGlobal = () => {
         productos.push(item)
         
     )})*/
-    console.log(productos)
+    // console.log(productos)
     return (
       <div className='DiarioLocal-total'>
         
