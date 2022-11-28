@@ -44,7 +44,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
              console.log('Register user',);
              setTimeout(function(){ 
                 window.location.href = "/Emergencias";
-              },1);
+              },1000);
          })
          API.post('login', formData).then(res => {
        
@@ -81,7 +81,7 @@ import { JwtContext } from '../../Componentes/Shared/contexts/JwtContext';
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
 
-                        <input  multiple id="userImage" name="file" placeholder='Subir Foto'
+                        <input type='file' id="userImage" name="file" placeholder='Subir Foto'
                         {...register("userImage", { required: true ,  })}/>
 
                 </div>
