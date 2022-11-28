@@ -10,24 +10,26 @@ import { ApplergicContext } from "../../../Context/context";
 const Portada = () => {
   const { usuario } = useContext(ApplergicContext);
   const info = usuario._id;
-  let loggedIn= false;
+  console.log(info)
 
   function Redirect(){
-    console.log(info)
-    if(info === undefined){
-    setTimeout(function(){ 
-      window.location.href = "/bienvenida";
-    },3000);
-    console.log("porque no estabas loggeado");
-  }else{
-    setTimeout(function(){ 
-      window.location.href = "/Home";
-    },3000);
-    console.log("porque SI estabas loggeado");
-  }
+    // console.log(info)
+
+
+  //   if(info !== undefined){
+  //     console.log("porque SI estabas loggeado");
+  //     window.location.href = "/Home";   
+  // }else if(info === undefined){
+  //   window.location.href = "/bienvenida"
+  //   console.log("porque no estabas loggeado");
+  // }
   }
 
-  Redirect()
+
+  setTimeout(function(){ 
+    Redirect()
+  },6000)
+  
   
 
   return (
