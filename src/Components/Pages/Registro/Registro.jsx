@@ -12,6 +12,27 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 
 
   export default function Registro(){
+    const [botonActivo,setBotonActivo]=useState(false);
+
+    const [inputSelected, setInputSelected]=useState([]);
+    
+    const handleChangeInput=e=>{
+      var auxiliar=null;
+      if(inputSelected.includes(e.target.value)){
+        auxiliar=inputSelected.filter(elemento=>elemento!==e.target.value);
+      }else{auxiliar=inputSelected.concat(e.target.value);
+      }
+      setInputSelected(auxiliar);
+    
+      if(auxiliar.length>0){
+        setBotonActivo(true);
+       } else{
+        setBotonActivo(false);
+       }
+      
+    }
+    
+
     const {t} = useContext(MyContext)
 
 
@@ -20,7 +41,11 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
     const onSubmit = formData => {
          API.post('register', formData).then(res => {
              console.log('Register user',);
+             setTimeout(function(){ 
+                window.location.href = "/Emergencias";
+              },1);
          })
+
      }
   
     return (
@@ -40,7 +65,7 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
      </div>
  </div>
      
-  <form  className='form-registro' onSubmit={handleSubmit(onSubmit)}>
+  <form  className='form-registro' onSubmit={handleSubmit(onSubmit)} onChange={handleChangeInput}>
             <div className='div-top-form'>
                 <div className='div-cam-input'>
                         <img  className='ima-cam' src={camara}/>
@@ -66,7 +91,7 @@ import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
                             required: true,
                             pattern: /[A-Za-z\d$@$!%*?&]{8,15}/ })}/>
 
-                    <BtnGlobal2 type="submit" name={t('guardarPerfil')} class="rgb(196 196 196)"/>
+<button className='boton-login' disabled={!botonActivo}>Guardar Perfil</button>
     </form>
  </>
        
