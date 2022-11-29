@@ -33,6 +33,8 @@ export const en = {
     btnSOS:'S.O.S.',
     de:'of',
     name:'Name',
+    nombre: 'Name',
+    miembro: 'Member since',
     email:'Email',
     movil:'Movil',
     img:'Img',

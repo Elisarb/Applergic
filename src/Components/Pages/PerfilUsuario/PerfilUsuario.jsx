@@ -6,8 +6,11 @@ import BtnFav from '../../Componentes/Shared/Btn-Fav/Btn-Fav';
 import BtnDiary from '../../Componentes/Shared/Btn-Diary/Btn-Diary';
 import camara from '../../../Assets/camara.png'
 import SimpleBarReact from 'simplebar-react';
+import { MyContext } from '../../Componentes/Shared/contexts/MyContext';
 import 'simplebar-react/dist/simplebar.min.css';
 const PerfilUsuario = () => {
+  
+  const {t} = useContext(MyContext)
 
     const { usuario } = useContext(ApplergicContext);
     console.log(usuario)
@@ -23,11 +26,11 @@ const PerfilUsuario = () => {
                 
           </div>
           <div className='PerfilUsuario-Caja-tiempo'>
-            <h1 className='PerfilUsuario-tiempo'>Miembro desde: {fecha}</h1>
+            <h1 className='PerfilUsuario-tiempo'>{t('miembro')}: {fecha}</h1>
           </div>
           <div className='PerfilUsuario-Caja-Info'>
             <div className='PerfilUsuario-Caja-Info-nombre'>
-                <h1 className='PerfilUsuario-nombre-titulo'>NOMBRE</h1>
+                <h1 className='PerfilUsuario-nombre-titulo'>{t('nombre')}</h1>
                 <h1 className='PerfilUsuario-nombre'>{usuario.userName}</h1>
             </div>
             <div className='PerfilUsuario-Caja-Info-email'>

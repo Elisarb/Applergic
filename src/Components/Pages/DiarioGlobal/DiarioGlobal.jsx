@@ -45,10 +45,10 @@ const DiarioGlobal = () => {
                 </div>
                 <div className='DiarioLocal-Producto-btns-caja'>
                     <div className='DiarioLocal-Producto-btn'>
-                        <img className='DiarioLocal-Producto-btn-img' src={Img2} alt="" />
+                       
                     </div>
                     <div className='DiarioLocal-Producto-btn'>
-                        <img className='DiarioLocal-Producto-btn-img' src={Img3} alt="" />
+                        
                     </div>
                 </div>
 
