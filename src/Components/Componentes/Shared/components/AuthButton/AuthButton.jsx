@@ -15,7 +15,7 @@ export default function AuthButton () {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         setJwt(null);
-        navigate("/");
+        navigate("/Valoraciones");
         
     }
 console.log(user)

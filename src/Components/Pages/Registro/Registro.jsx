@@ -49,7 +49,7 @@ import Demo from '../../Pages/Imagen/Demo';
          API.post('register', formData).then(res => {
              console.log(res);
              setTimeout(function(){ 
-                window.location.href = "/Emergencias";
+                window.location.href = "/Registroalergias";
               },500);
             ingresar()
 

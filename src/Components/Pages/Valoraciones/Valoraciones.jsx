@@ -24,7 +24,7 @@ const Valoraciones = () => {
             <h2>{t('porFavor')}</h2>
             <HoverRating ></HoverRating>
         </div>
-        <a onClick={()=> navigate("/Home")}>
+        <a onClick={()=> navigate("/Login")}>
         <BtnGlobal2 type="submit" name={t('sugerencias')} color="#26c7dc" class="transparent" border="none" />
         </a>
     </div>
