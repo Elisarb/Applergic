@@ -92,9 +92,9 @@ function ControlledCarousel() {
      
     </Carousel>
       <div className="btnsSiguiente">
-          <Link className="btnFinBienvenida1" to="/registro">{t('saltar')}</Link>
+          <Link className="btnFinBienvenida1" to="/login">{t('saltar')}</Link>
           {/* <a href=" ">{t('saltar')}</a> */}
-          <Link className="btnFinBienvenida" to="/registro">{t('siguiente')}</Link>
+          <Link className="btnFinBienvenida" to="/login">{t('siguiente')}</Link>
           {/* <a className="btnFinBienvenida" href="/login">{t('siguiente')}</a> */}
       </div>
     </div>

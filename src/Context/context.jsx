@@ -28,6 +28,7 @@ export const ApplergicContextProvider =({ children }) => {
             const {data}= await axios.get(`${BASEURL}/products`);
 
             setproductos(data)
+            console.log(data);
             
         };
         getData();

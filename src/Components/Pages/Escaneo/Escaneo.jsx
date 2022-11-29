@@ -3,20 +3,32 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import ScannerC from '../../Componentes/Scaner/ScannerC';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
+import React, { useContext} from 'react'
+import { ApplergicContext } from '../../../Context/context';
 
 
 
 const Escaneo = () => {
     const navigate = useNavigate()
+    const { productos } = useContext(ApplergicContext);
+    const [myproduct, setMyproduct]=useState({})
     let idBarcode
     const { register, handleSubmit } = useForm();
     const onSubmit = data =>  {
     idBarcode=(data.barcode)
     console.log(data.barcode)
-    console.log(idBarcode);
-    
+    console.log(idBarcode);    
     navigate(`/Escaneo/${idBarcode}`)
-  }; 
+    }
+    productos.map((item)=>{
+      if (item._id === idBarcode){
+          // productoEscaneado = item;
+          setMyproduct(item)
+          // console.log(productoEscaneado)
+          
+      }
+  })
+    ; 
     return (
     
       <div>
@@ -33,5 +45,5 @@ const Escaneo = () => {
       </div>
     )
   }
-  
+
   export default Escaneo
