@@ -1,5 +1,5 @@
 import './Btn-Share.scss';
-import Btn1 from '../../../Assets/Btn-Share.png'
+import Btn1 from '../../../../Assets/Btn-Share.png'
 import { Link } from 'react-router-dom';
 const BtnShare = () => {
     return(

@@ -1,0 +1,39 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    height: 50vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  
+  .container {
+    position: relative;
+    border-radius: 16px;
+  }
+  
+  .container,
+  #interactive.viewport {
+    width: 328px;
+    height: 216px;
+    border-radius: 16px;
+  }
+  
+  #interactive.viewport canvas,
+  video {
+    width: 328px;
+    height: 216px;
+    border-radius: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #interactive.viewport canvas.drawingBuffer,
+  video.drawingBuffer {
+    width: 328px;
+    height: 216px;
+    border-radius: 16px;
+  }

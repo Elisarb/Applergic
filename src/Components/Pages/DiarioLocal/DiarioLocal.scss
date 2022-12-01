@@ -1,0 +1,115 @@
+.DiarioLocal-total{
+    
+}
+
+.DiarioLocal-Caja-Header{
+    
+    height: 24px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 16px;
+    align-items: center;
+}
+
+.DiarioLocal-Header-Caja-btn{
+    height: 24px;
+    width: 24px;
+}
+
+.DiarioLocal-Header-img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+.DiarioLocal-Titulo{
+    
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DiarioLocal-Titulo-1{
+    
+    width: 50%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.DiarioLocal-Titulo-2{
+    
+    width: 75%;
+    height: 46px;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.DiarioLocal-Contenido {
+    border: 1px solid black;
+    
+}
+.DiarioLocal-Producto{
+    border-bottom: 1px solid gray;
+    height: 130px;
+    display: flex;
+    align-items: center;
+}
+.DiarioLocal-Producto-img-caja{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.DiarioLocal-Producto-img{
+    border: 6px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 70%;
+    width: 70%;
+}
+
+.DiarioLocal-Producto-datos-caja{
+    width: 50%;
+    height: 70%;
+}
+
+.DiarioLocal-Producto-datos-nombre{
+    font-size: 12px;
+    font-family: Montserrat-Medium;
+}
+
+.DiarioLocal-Producto-datos-fecha{
+    font-size: 12px;
+    font-family: Montserrat-Medium;
+}
+.DiarioLocal-Producto-datos-notas{
+    font-size: 12px;
+    font-family: Montserrat-Medium;
+}
+
+.DiarioLocal-Producto-btns-caja{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.DiarioLocal-Producto-btn{
+    width: 30px;
+    height: 30px;
+}
+
+.DiarioLocal-Producto-btn-img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+

@@ -1,9 +1,35 @@
 import React from 'react'
+import { useContext } from 'react'
 import './Portada.scss'
 import Img1 from '../../../Assets/Texto-Portada.png'
 import Img2 from '../../../Assets/Imagen-Portada.png'
+import { MyContext } from "../../../Components/Componentes/Shared/contexts/MyContext";
+import { ApplergicContext } from "../../../Context/context";
+
 
 const Portada = () => {
+  const { usuario } = useContext(ApplergicContext);
+  const info = usuario._id;
+  let loggedIn= false;
+
+  function Redirect(){
+    console.log(info)
+    if(info === undefined){
+    setTimeout(function(){ 
+      window.location.href = "/bienvenida";
+    },3000);
+    console.log("porque no estabas loggeado");
+  }else{
+    setTimeout(function(){ 
+      window.location.href = "/Home";
+    },3000);
+    console.log("porque SI estabas loggeado");
+  }
+  }
+
+  Redirect()
+  
+
   return (
     <div className='Portada-total'>
         <div className='Portada-arriba'>

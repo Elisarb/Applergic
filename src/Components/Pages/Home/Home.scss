@@ -5,7 +5,7 @@
 }
 .Hamburguesa-Wrap{
     //height: 10vh;
-    background-color: white;
+    background-color: rgb(217, 217, 217);
     border: 1px solid lightgrey;
     border-bottom-color:black ;
     width: 64%;
@@ -17,13 +17,18 @@
 }
 .Hamburguesa-Btn-Caja{
     height: 48px;
-    width: 48px;
-    margin-left: 90%;
+    display: flex;
+    /* width: 48px; */
+    /* margin-left: 90%; */
+    justify-content: flex-end;
     
 }
 .Hamburguesa-btn{
-    width: 24px;
-    height: 24px;
+    width: 50px;
+    height: 50px;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom-left-radius: 10px;
    
 }
 .Hamburguesa-Opciones-Caja{}
@@ -47,6 +52,37 @@
     text-decoration: none!important;
 }
 
+
+
+
+.Compartir-Wrap{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(217, 217, 217);
+    border: 3px solid grey;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000000;
+}
+
+.Compartir-Btn-Caja{
+    width: 50px;
+    height: 50px;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom-left-radius: 10px;
+}
+.Compartir-btn{
+    width: 100%;
+    height: 100%;
+}
+.Compartir-Opciones-Usuarios{
+    display: flex;
+    
+}
 //HEADER
 .Home-Header{
     display: flex;
@@ -124,4 +160,10 @@
 }
 .btn2{
     background-color: rgb(35, 92, 166);
+}
+.btnHome{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

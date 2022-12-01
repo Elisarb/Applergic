@@ -1,11 +1,16 @@
-.arribaa {
+.top-login {
     display: flex;
     flex-direction: column;
     align-items: center;
 
     h1{
-        margin-top: 35px;
+        margin-top: 20px;
     }
+}
+
+.imatop{
+    height: 235px;
+    width: 375px;
 }
 
 .form-login{
@@ -17,29 +22,26 @@
     
         input{
             background-color: transparent !important;
-            margin-top: 20px;
-            margin-bottom: 20px;
             border: none;
             border-bottom: 2px solid rgb(216, 213, 213);
             width: 75%;
-            font-size: 22px;
+            font-size: 14px;
             height: 66px;
         
         }
-        button{
-            font-size: 17px;
-            width: 80%;
-        }
-
 }
-.form-login-a{
+.form-login-p{
     color: rgb(0, 213, 255); 
     text-decoration: none;
+    margin-top: 7px;
 }
 .text-bottom-button{
     color: rgb(0, 213, 255); 
     background-color: transparent !important;
     border: none; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-bottom{
@@ -53,6 +55,52 @@
             color: rgb(196 196 196);
         }
 }
-.imatop{
-    height: 249px;
+
+
+.pag-login{
+    animation-name:aparicionLogin;
+    animation-duration:1s;
+    animation-delay:0s;
 }
+a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 213, 255);
+
+}
+@keyframes aparicionLogin{
+    0%{
+        opacity:0;
+        transform: scale(1) translateX(75px);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+button:disabled {
+    pointer-events: none; //better than cursor: default;
+    opacity: 0.65;
+    border-color: rgba(13, 51, 32, 0.1);
+    color: white;
+   background-color: rgb(196 196 196)
+    
+  }
+  .boton-login{
+    width: 87%;
+    height: 50px;
+    font-size: 25px;
+    border-radius:8px;
+    border-color: rgba(13, 51, 32, 0.1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgb(38 199 220);
+}
+
