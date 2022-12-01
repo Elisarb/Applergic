@@ -5,6 +5,9 @@ import ScannerC from '../../Componentes/Scaner/ScannerC';
 import { VolverGlobal } from '../VolverGlobal/VolverGlobal';
 import React, { useContext} from 'react'
 import { ApplergicContext } from '../../../Context/context';
+import BtnHome from '../../Componentes/Shared/Btn-Home/Btn-Home';
+import BtnFav from '../../Componentes/Shared/Btn-Fav/Btn-Fav';
+import BtnDiary from '../../Componentes/Shared/Btn-Diary/Btn-Diary';
 
 
 
@@ -42,6 +45,14 @@ const Escaneo = () => {
         <input placeholder="Introduce el código" type='number' {...register("barcode", { required: true, minLength:3, maxLength: 16 })}></input>
         <button>Enviar</button>
         </form>
+        <div className='Home-Footer'>
+            <div className='Home-Footer-Caja'>
+                <BtnHome></BtnHome>
+                <BtnFav></BtnFav>
+                <BtnDiary></BtnDiary>
+               
+            </div>
+        </div>
       </div>
     )
   }

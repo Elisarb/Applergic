@@ -23,6 +23,19 @@
     margin-right: 10px;
     border-color: #30be76;
     border-radius: 10px;
+
+}
+.c-infoBoxProduct__images__contenedor__img2{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 192px;
+    width: 192px;
+    border: solid;
+    border-width: 15px;
+    margin-right: 10px;
+    border-color: #d30606;
+    border-radius: 10px; 
 }
 .c-infoBoxProduct__images__img{
     height: 192px;
@@ -49,4 +62,8 @@
 	}
 
 	
+}
+.volver1{
+    text-decoration: none;
+    color:white;
 }
