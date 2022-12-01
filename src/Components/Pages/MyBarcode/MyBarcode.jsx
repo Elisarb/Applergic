@@ -30,7 +30,8 @@ const MyBarcode = () => {
     const {idBarcode} = useParams();
     const [printproduct, setprintproduct]=useState({})
     const {products, camera, setCamera} = useContext(JwtContext);
-    let peligro='hola';
+    const [peligro, setpeligro]=useState()
+    
     
     
 
@@ -40,13 +41,13 @@ const MyBarcode = () => {
 
 
         function producto (array) {
-            console.log("funciona")
+            // console.log("funciona")
     
                 array.map((item)=>{
                 if (item.barCode == idBarcode){
                     productoEscaneado = item;
                     // setMyproduct(item)
-                    console.log(productoEscaneado)
+                    // console.log(productoEscaneado)
                     // printProduct.push(item)
                     setprintproduct(item)
                     // // console.log(usuario);
@@ -61,21 +62,22 @@ const MyBarcode = () => {
                 // console.log(usuario);
                 // console.log(productoEscaneado.ingredients);
                 let alergenosUsuario = usuario.allergens;
-                console.log(alergenosUsuario)
+                // console.log(alergenosUsuario)
 
                 alergenosUsuario.map((item) => {
                     let ingredientesMin = productoEscaneado.ingredients.toLowerCase().toString();
+                    console.log(ingredientesMin)
                     // if(productoEscaneado.ingredients.toLowerCase().contains(item.allergensName)){
                     //     console.log("peligro")
                     // }
-                    console.log(`las alergias del user son: ${item.allergensName}`)
+                    // console.log(`las alergias del user son: ${item.allergensName}`)
                     
-                    if(ingredientesMin.includes(item.allergensName)){
+                    if(ingredientesMin.includes(item.allergensName.toLowerCase())){
                         console.log("peligro")
-                        peligro = true;
+                        setpeligro(true);
                     }else{
                         console.log("no hay peligro")
-                        peligro = false;
+                        setpeligro(false);
                     }
                 })
             }
@@ -86,7 +88,7 @@ const MyBarcode = () => {
     
     
     // printProduct.push(productoEscaneado) ;
-    console.log(printproduct)
+    // console.log(printproduct)
 
     useEffect(()=>{
         
@@ -102,13 +104,18 @@ const MyBarcode = () => {
                 </div>
                 <div  className="c-infoBoxProduct">
                     <h1>Aquí tienes el resultado</h1>
-                
-                    <p>Este producto es apto para tí</p>
-                    <p>Este producto NO es apto para tí</p>
+                    {peligro ? <p>Este producto NO es apto para tí</p>: <p>Este producto es apto para tí</p>}
+                    {/* <p>Este producto es apto para tí</p>
+                    <p>Este producto NO es apto para tí</p> */}
                     <div className="c-infoBoxProduct__images">
-                        <div className="c-infoBoxProduct__images__contenedor__img">
+                        {peligro ? 
+                        <div className="c-infoBoxProduct__images__contenedor__img2">
                             <img src={printproduct.productImage} alt={printproduct.productName} className="c-infoBoxProduct__images__img"/>
-                        </div>
+                        </div> :
+                        <div className="c-infoBoxProduct__images__contenedor__img">
+                        <img src={printproduct.productImage} alt={printproduct.productName} className="c-infoBoxProduct__images__img"/>
+                    </div>
+                        }
                         <div className="c-infoBoxProduct__images__icons">
                             <BtnFav></BtnFav>
                             <BtnDiary></BtnDiary>
@@ -117,10 +124,13 @@ const MyBarcode = () => {
                     </div>
                     <h2>{printproduct.productName}</h2>
                     <p>{printproduct.ingredients}</p>
+                    <Link className='volver1' to={`/Escaneo`}><VolverGlobal onClick={() => setCamera(!camera)}/>
+
                     <BtnGlobal2 type="submit" name={t('escanearTexto2')} color="white" class="#26c7dc" border="none" />
+                    </Link>
                 </div>
             </div>
-        )
+        
         </>
             
         //  
